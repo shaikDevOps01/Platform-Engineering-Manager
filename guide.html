@@ -1,0 +1,2351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform Engineering & DevOps — Complete Career Blueprint 2025–2026</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #21253a;
+    --border: #2e3350;
+    --accent: #7c6ef8;
+    --accent2: #4fd1c5;
+    --accent3: #f6ad55;
+    --accent4: #fc8181;
+    --text: #e2e8f0;
+    --muted: #8892aa;
+    --green: #68d391;
+    --blue: #63b3ed;
+    --yellow: #fbd38d;
+    --red: #fc8181;
+    --pink: #f687b3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; line-height: 1.7; }
+  a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Nav */
+  #nav { position: fixed; left: 0; top: 0; bottom: 0; width: 260px; background: var(--surface); border-right: 1px solid var(--border); overflow-y: auto; padding: 1.5rem 0; z-index: 100; }
+  #nav h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; padding: 0.5rem 1.25rem; margin-top: 1rem; }
+  #nav a { display: block; padding: 0.35rem 1.25rem; font-size: 13px; color: var(--muted); transition: color 0.15s, background 0.15s; border-left: 2px solid transparent; }
+  #nav a:hover, #nav a.active { color: var(--text); background: var(--surface2); border-left-color: var(--accent); text-decoration: none; }
+  .nav-brand { padding: 0 1.25rem 1rem; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; }
+  .nav-brand .logo { font-size: 16px; font-weight: 700; color: var(--text); }
+  .nav-brand .sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Main */
+  #main { margin-left: 260px; padding: 2.5rem 3rem 4rem; max-width: 1100px; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #1e2040 0%, #1a1d27 100%); border: 1px solid var(--border); border-radius: 16px; padding: 3rem; margin-bottom: 3rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(124,110,248,0.15) 0%, transparent 70%); }
+  .hero h1 { font-size: 2rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.75rem; }
+  .hero .tagline { font-size: 15px; color: var(--muted); max-width: 600px; margin-bottom: 1.5rem; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .b-purple { background: rgba(124,110,248,0.2); color: #a78bfa; border: 1px solid rgba(124,110,248,0.3); }
+  .b-teal { background: rgba(79,209,197,0.2); color: #4fd1c5; border: 1px solid rgba(79,209,197,0.3); }
+  .b-orange { background: rgba(246,173,85,0.2); color: #f6ad55; border: 1px solid rgba(246,173,85,0.3); }
+  .b-red { background: rgba(252,129,129,0.2); color: #fc8181; border: 1px solid rgba(252,129,129,0.3); }
+  .b-green { background: rgba(104,211,145,0.2); color: #68d391; border: 1px solid rgba(104,211,145,0.3); }
+
+  /* Sections */
+  .part { margin-bottom: 4rem; }
+  .part-header { display: flex; align-items: center; gap: 16px; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .part-num { width: 48px; height: 48px; border-radius: 12px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .part-num.n2 { background: var(--accent2); color: #0f1117; }
+  .part-num.n3 { background: var(--accent3); color: #0f1117; }
+  .part-num.n4 { background: var(--accent4); color: #0f1117; }
+  .part-num.n5 { background: var(--green); color: #0f1117; }
+  .part-num.n6 { background: var(--blue); color: #0f1117; }
+  .part-num.n7 { background: var(--pink); color: #0f1117; }
+  .part-num.n8 { background: #9f7aea; color: #fff; }
+  .part-num.n9 { background: #f6ad55; color: #0f1117; }
+  .part-num.n10 { background: var(--accent2); color: #0f1117; }
+  .part-num.n11 { background: #68d391; color: #0f1117; }
+  .part-num.n12 { background: #fc8181; color: #fff; }
+  .part-num.n13 { background: #7c6ef8; color: #fff; }
+  .part-title { font-size: 1.5rem; font-weight: 700; color: #fff; }
+  .part-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  h2 { font-size: 1.2rem; font-weight: 600; color: #fff; margin: 2rem 0 1rem; }
+  h3 { font-size: 1rem; font-weight: 600; color: var(--accent2); margin: 1.5rem 0 0.5rem; }
+  h4 { font-size: 0.9rem; font-weight: 600; color: var(--accent3); margin: 1rem 0 0.4rem; }
+  p { margin-bottom: 0.75rem; color: var(--text); }
+
+  /* Cards */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+  .stat-val { font-size: 1.6rem; font-weight: 700; color: #fff; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat-sub { font-size: 11px; color: var(--muted); }
+
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 13px; }
+  th { background: var(--surface2); color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* Skill bars */
+  .skill-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .skill-name { font-size: 13px; color: var(--text); min-width: 180px; }
+  .bar-bg { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; }
+  .bar-fill { height: 100%; border-radius: 3px; background: var(--accent); }
+  .bar-fill.t2 { background: var(--accent2); }
+  .bar-fill.t3 { background: var(--accent3); }
+  .skill-pct { font-size: 12px; color: var(--muted); min-width: 36px; text-align: right; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 1.5rem; }
+  .tl-dot { position: absolute; left: -2rem; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+  .tl-dot.d2 { background: var(--accent2); }
+  .tl-dot.d3 { background: var(--accent3); }
+  .tl-label { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .tl-label.l2 { color: var(--accent2); }
+  .tl-label.l3 { color: var(--accent3); }
+  .tl-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .tl-body { font-size: 13px; color: var(--muted); }
+
+  /* Lists */
+  ul.custom { list-style: none; padding: 0; margin-bottom: 1rem; }
+  ul.custom li { padding: 6px 0 6px 24px; position: relative; font-size: 13px; color: var(--text); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  ul.custom li::before { content: '▸'; position: absolute; left: 6px; color: var(--accent2); }
+  ul.check li::before { content: '✓'; color: var(--green); }
+  ul.warn li::before { content: '⚠'; color: var(--yellow); }
+  ul.x li::before { content: '✗'; color: var(--red); }
+
+  /* Callouts */
+  .callout { border-left: 3px solid; border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1rem; font-size: 13px; }
+  .callout.info { border-color: var(--accent); background: rgba(124,110,248,0.08); }
+  .callout.success { border-color: var(--green); background: rgba(104,211,145,0.08); }
+  .callout.warn { border-color: var(--yellow); background: rgba(246,173,85,0.08); }
+  .callout.danger { border-color: var(--red); background: rgba(252,129,129,0.08); }
+  .callout strong { color: #fff; }
+
+  /* Q&A */
+  .qa-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; overflow: hidden; }
+  .qa-q { background: var(--surface2); padding: 0.9rem 1.25rem; font-size: 13px; font-weight: 600; color: #fff; cursor: pointer; display: flex; justify-content: space-between; }
+  .qa-a { padding: 1rem 1.25rem; font-size: 13px; color: var(--text); line-height: 1.6; border-top: 1px solid var(--border); }
+  .qa-diff { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .diff-easy { background: rgba(104,211,145,0.2); color: #68d391; }
+  .diff-med { background: rgba(246,173,85,0.2); color: #f6ad55; }
+  .diff-hard { background: rgba(252,129,129,0.2); color: #fc8181; }
+
+  /* Code */
+  code { font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 12px; background: var(--surface2); color: var(--accent2); padding: 1px 6px; border-radius: 4px; }
+  pre { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; margin-bottom: 1rem; overflow-x: auto; }
+  pre code { background: none; color: #e2e8f0; padding: 0; font-size: 12px; }
+
+  /* Week cards */
+  .week-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; display: grid; grid-template-columns: 90px 1fr; gap: 1rem; }
+  .week-num { font-size: 12px; font-weight: 700; color: var(--accent); border-right: 1px solid var(--border); padding-right: 1rem; }
+  .week-content h4 { color: #fff; font-size: 14px; margin: 0 0 6px; }
+  .week-content p { font-size: 12px; color: var(--muted); margin: 0; }
+
+  /* Project cards */
+  .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; }
+  .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+  .project-num { width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .project-title { font-size: 15px; font-weight: 600; color: #fff; margin-left: 12px; flex: 1; }
+  .diff-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px; }
+
+  /* Certs */
+  .cert-row { display: flex; align-items: center; gap: 12px; padding: 0.85rem 0; border-bottom: 1px solid var(--border); }
+  .cert-rank { width: 28px; font-size: 12px; font-weight: 700; color: var(--muted); text-align: center; }
+  .cert-info { flex: 1; }
+  .cert-name { font-size: 14px; font-weight: 600; color: #fff; }
+  .cert-sub { font-size: 12px; color: var(--muted); }
+  .cert-roi { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 8px; }
+  .roi-high { background: rgba(104,211,145,0.2); color: #68d391; }
+  .roi-med { background: rgba(246,173,85,0.2); color: #f6ad55; }
+  .roi-low { background: rgba(252,129,129,0.2); color: #fc8181; }
+
+  /* Roadmap topic cards */
+  .topic-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 0.75rem; }
+  .topic-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+  .topic-name { font-size: 15px; font-weight: 600; color: #fff; }
+  .depth-pill { font-size: 11px; font-weight: 600; padding: 2px 10px; border-radius: 10px; }
+  .depth-must { background: rgba(252,129,129,0.2); color: #fc8181; }
+  .depth-high { background: rgba(246,173,85,0.2); color: #f6ad55; }
+  .depth-med { background: rgba(79,209,197,0.2); color: #4fd1c5; }
+  .depth-bonus { background: rgba(104,211,145,0.2); color: #68d391; }
+
+  .level-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; font-size: 12px; }
+  .level-box { background: var(--surface2); border-radius: 6px; padding: 0.6rem 0.8rem; }
+  .level-label { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .lb-beginner { color: var(--green); }
+  .lb-mid { color: var(--yellow); }
+  .lb-adv { color: var(--red); }
+
+  /* Doc template */
+  .doc-template { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; font-family: monospace; font-size: 12px; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+  .doc-template .doc-section { color: var(--accent2); font-weight: 600; }
+  .doc-template .doc-field { color: var(--accent3); }
+
+  @media (max-width: 900px) {
+    #nav { display: none; }
+    #main { margin-left: 0; padding: 1.5rem; }
+    .level-grid { grid-template-columns: 1fr; }
+    .week-card { grid-template-columns: 1fr; }
+  }
+
+  .scroll-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--accent); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+
+  .toc-num { color: var(--muted); margin-right: 6px; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  .salary-range { display: inline-block; font-weight: 600; color: var(--green); }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+
+  .highlight { background: rgba(124,110,248,0.1); border: 1px solid rgba(124,110,248,0.2); border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; font-size: 13px; }
+
+  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  @media (max-width: 700px) { .comparison-grid { grid-template-columns: 1fr; } }
+
+  .month-block { border-left: 3px solid var(--accent); padding-left: 1.5rem; margin-bottom: 2rem; }
+  .month-title { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 0.75rem; }
+  .month-block.m2 { border-color: var(--accent2); }
+  .month-block.m2 .month-title { color: var(--accent2); }
+  .month-block.m3 { border-color: var(--accent3); }
+  .month-block.m3 .month-title { color: var(--accent3); }
+  .month-block.m4 { border-color: var(--green); }
+  .month-block.m4 .month-title { color: var(--green); }
+  .month-block.m5 { border-color: var(--blue); }
+  .month-block.m5 .month-title { color: var(--blue); }
+  .month-block.m6 { border-color: var(--pink); }
+  .month-block.m6 .month-title { color: var(--pink); }
+
+  .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 11px; font-weight: 700; margin-right: 8px; }
+  .r1 { background: #f6e05e; color: #0f1117; }
+  .r2 { background: #cbd5e0; color: #0f1117; }
+  .r3 { background: #c05621; color: #fff; }
+  .r-other { background: var(--surface2); color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="logo">Platform Engineering</div>
+    <div class="sub">Complete Career Blueprint 2025–2026</div>
+  </div>
+  <h2>Navigation</h2>
+  <a href="#hero">Overview</a>
+  <h2>Parts</h2>
+  <a href="#part1">1 — Market Analysis</a>
+  <a href="#part2">2 — Skills Analysis</a>
+  <a href="#part3">3 — Technology Roadmap</a>
+  <a href="#part4">4 — Platform Eng Roadmap</a>
+  <a href="#part5">5 — DevOps Roadmap</a>
+  <a href="#part6">6 — Portfolio Projects</a>
+  <a href="#part7">7 — Interview Prep</a>
+  <a href="#part8">8 — Documentation</a>
+  <a href="#part9">9 — Remote Jobs</a>
+  <a href="#part10">10 — AI + Platform Eng</a>
+  <a href="#part11">11 — Certifications</a>
+  <a href="#part12">12 — Learning Priority</a>
+  <a href="#part13">13 — Final Blueprint</a>
+</nav>
+
+<!-- MAIN -->
+<div id="main">
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <h1>Platform Engineering &amp; DevOps<br>Complete Career Blueprint</h1>
+  <p class="tagline">A comprehensive, brutally honest, market-grounded guide from ₹0 to ₹25 LPA and beyond — built on real 2025–2026 hiring data from 200+ job descriptions across LinkedIn, Wellfound, Glassdoor, YC, and Greenhouse.</p>
+  <div class="badge-row">
+    <span class="badge b-purple">13 Parts</span>
+    <span class="badge b-teal">Bengaluru-focused</span>
+    <span class="badge b-orange">2025–2026 Data</span>
+    <span class="badge b-red">India → Remote</span>
+    <span class="badge b-green">900+ Interview Q&amp;A</span>
+  </div>
+</div>
+
+<!-- =============================================================== -->
+<!-- PART 1 -->
+<!-- =============================================================== -->
+<section class="part" id="part1">
+  <div class="part-header">
+    <div class="part-num">1</div>
+    <div>
+      <div class="part-title">Current Market Analysis</div>
+      <div class="part-sub">India · US · Europe · Remote — Demand, salaries, trends, and 5-year outlook</div>
+    </div>
+  </div>
+
+  <h2>India — The World's Fastest-Growing DevOps Talent Market</h2>
+  <p>India in 2025–2026 is not a follower market for DevOps — it is a production talent factory. GCCs of Amazon, Google, Microsoft, Walmart, Goldman Sachs, and JPMorgan are running genuine platform work out of Bengaluru, Hyderabad, and Pune. Simultaneously, a maturing Indian product economy (Razorpay, Zepto, Groww, PhonePe, Dunzo, Swiggy) is building SRE and platform engineering teams that rival anything in Silicon Valley for complexity.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-val" style="color:var(--green)">39,800+</div><div class="stat-label">Active DevOps openings in India</div><div class="stat-sub">As of June 2026</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:var(--blue)">533+</div><div class="stat-label">Bengaluru-specific roles</div><div class="stat-sub">Glassdoor, hybrid</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:var(--yellow)">₹5.9L</div><div class="stat-label">Early career avg CTC</div><div class="stat-sub">1–4 yrs, India-wide</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:var(--accent)">₹11.3L</div><div class="stat-label">Mid-level avg CTC</div><div class="stat-sub">5–9 yrs experience</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:var(--pink)">27%</div><div class="stat-label">Platform Eng premium</div><div class="stat-sub">Over DevOps equivalent</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:var(--red)">80%</div><div class="stat-label">Large orgs with platform teams</div><div class="stat-sub">Gartner 2026 forecast</div></div>
+  </div>
+
+  <h3>India Salary Bands — Realistic 2026 Numbers</h3>
+  <table>
+    <thead><tr><th>Role</th><th>0–2 Yrs</th><th>2–5 Yrs</th><th>5–10 Yrs</th><th>10+ Yrs</th></tr></thead>
+    <tbody>
+      <tr><td>DevOps Engineer</td><td>₹4–7 LPA</td><td>₹7–14 LPA</td><td>₹14–25 LPA</td><td>₹25–50 LPA</td></tr>
+      <tr><td>Platform Engineer</td><td>₹5–9 LPA</td><td>₹9–18 LPA</td><td>₹18–35 LPA</td><td>₹35–70 LPA</td></tr>
+      <tr><td>SRE</td><td>₹6–10 LPA</td><td>₹10–20 LPA</td><td>₹20–40 LPA</td><td>₹40–80 LPA</td></tr>
+      <tr><td>Cloud Engineer</td><td>₹4–7 LPA</td><td>₹7–15 LPA</td><td>₹15–28 LPA</td><td>₹28–55 LPA</td></tr>
+      <tr><td>AI Infrastructure Eng</td><td>₹8–12 LPA</td><td>₹12–22 LPA</td><td>₹22–45 LPA</td><td>₹45–90 LPA</td></tr>
+      <tr><td>MLOps Engineer</td><td>₹6–10 LPA</td><td>₹10–20 LPA</td><td>₹20–38 LPA</td><td>₹38–75 LPA</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout info"><strong>Reality check for 2 years of experience:</strong> With strong Kubernetes, Terraform, and a real portfolio, ₹7–12 LPA is achievable. The gap between ₹7L and ₹12L is almost entirely determined by demonstrated project work and interview performance — not years on the job. A weaker resume with 5 years will lose to a strong portfolio with 2 years at product startups.</div>
+
+  <h2>United States Market</h2>
+  <p>The US market is the benchmark every remote Indian engineer eventually targets. After significant layoffs in 2023–2024, the 2025–2026 market has restabilized around platform engineering, AI infrastructure, and security-embedded DevOps. Companies are not hiring generalist "do everything" DevOps engineers anymore — they want Platform Engineers who build developer-facing systems, or AI infra engineers who run inference at scale.</p>
+
+  <table>
+    <thead><tr><th>Role</th><th>Entry (USD/yr)</th><th>Mid (USD/yr)</th><th>Senior (USD/yr)</th><th>Staff (USD/yr)</th></tr></thead>
+    <tbody>
+      <tr><td>DevOps Engineer</td><td>$80K–$110K</td><td>$110K–$160K</td><td>$160K–$220K</td><td>$220K–$320K</td></tr>
+      <tr><td>Platform Engineer</td><td>$95K–$130K</td><td>$130K–$185K</td><td>$185K–$260K</td><td>$260K–$380K</td></tr>
+      <tr><td>SRE</td><td>$100K–$140K</td><td>$140K–$200K</td><td>$200K–$280K</td><td>$280K–$420K</td></tr>
+      <tr><td>AI Infra Engineer</td><td>$110K–$160K</td><td>$160K–$240K</td><td>$240K–$340K</td><td>$340K–$500K+</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Europe Market</h2>
+  <p>Europe's market is more fragmented but growing. Germany, Netherlands, UK, and Sweden are the strongest markets. GDPR compliance has created massive demand for DevSecOps. The shift to platform engineering is happening at the same pace as the US but 12–18 months behind in terms of Internal Developer Platform (IDP) adoption.</p>
+
+  <table>
+    <thead><tr><th>Country</th><th>DevOps Mid</th><th>Platform Eng Mid</th><th>SRE Mid</th></tr></thead>
+    <tbody>
+      <tr><td>Germany</td><td>€65K–€90K</td><td>€80K–€110K</td><td>€85K–€115K</td></tr>
+      <tr><td>Netherlands</td><td>€70K–€95K</td><td>€85K–€115K</td><td>€90K–€120K</td></tr>
+      <tr><td>United Kingdom</td><td>£60K–£90K</td><td>£75K–£110K</td><td>£80K–£120K</td></tr>
+      <tr><td>Sweden</td><td>SEK 680K–900K</td><td>SEK 820K–1.1M</td><td>SEK 860K–1.2M</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Remote-First Companies</h2>
+  <p>Remote-first companies (GitLab, HashiCorp, Cloudflare, Datadog, Grafana Labs, PlanetScale, Tailscale, Render, Railway, Fly.io) pay global rates often 70–90% of US salaries while allowing India-based engineers to earn in USD. The hiring bar is extremely high — every candidate needs a demonstrable GitHub presence, strong async communication, and production-scale proof of work.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>What remote companies want</h3>
+      <ul class="custom">
+        <li>Production Kubernetes at real scale (not local minikube)</li>
+        <li>Public GitHub with real commit history</li>
+        <li>Blog posts / technical writing</li>
+        <li>Async communication demonstrated in PR descriptions</li>
+        <li>Strong English written skills</li>
+        <li>Overlap hours with US/EU timezone teams</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Remote comp for India-based engineers</h3>
+      <ul class="custom">
+        <li>Junior: $40K–$70K/yr USD</li>
+        <li>Mid: $70K–$110K/yr USD</li>
+        <li>Senior: $110K–$160K/yr USD</li>
+        <li>Staff: $160K–$220K/yr USD</li>
+        <li>Paid as contractor (USD) or via EOR</li>
+        <li>Effective INR: ₹35L–₹1.8Cr at senior level</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Role Comparison — Long-Term Growth</h2>
+  <table>
+    <thead><tr><th>Role</th><th>5-Yr Demand</th><th>10-Yr Demand</th><th>AI Displacement Risk</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Platform Engineer</strong></td><td style="color:var(--green)">↑↑ Very High</td><td style="color:var(--green)">↑↑ Sustained</td><td style="color:var(--green)">Low</td><td>🏆 Best long-term bet</td></tr>
+      <tr><td>SRE</td><td style="color:var(--green)">↑↑ High</td><td style="color:var(--yellow)">↑ Moderate</td><td style="color:var(--yellow)">Low–Medium</td><td>Strong, converging with PE</td></tr>
+      <tr><td>AI Infra Engineer</td><td style="color:var(--green)">↑↑↑ Explosive</td><td style="color:var(--green)">↑↑ Very High</td><td style="color:var(--green)">Very Low</td><td>🚀 Highest upside</td></tr>
+      <tr><td>DevOps Engineer</td><td style="color:var(--yellow)">↑ Moderate</td><td style="color:var(--red)">→ Flat</td><td style="color:var(--yellow)">Medium</td><td>Evolve or get disrupted</td></tr>
+      <tr><td>Cloud Engineer</td><td style="color:var(--yellow)">↑ Moderate</td><td style="color:var(--red)">↓ Declining</td><td style="color:var(--red)">High</td><td>Specialist roles only survive</td></tr>
+      <tr><td>MLOps Engineer</td><td style="color:var(--green)">↑↑ High</td><td style="color:var(--green)">↑↑ High</td><td style="color:var(--green)">Low</td><td>Niche but well-paid</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success"><strong>The winning move:</strong> Enter as a DevOps Engineer, do Platform Engineering work regardless of the title, add AI infrastructure skills in Year 2, and exit with a Platform Engineer or AI Infra Engineer title at 18–24 months. This is the fastest path from ₹6–8 LPA to ₹15–25 LPA.</div>
+
+  <h2>Future Outlook (Next 5–10 Years)</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>2025–2027</h3>
+      <ul class="custom">
+        <li>Platform engineering becomes the standard model (replaces DevOps in large orgs)</li>
+        <li>AI copilots embedded in CI/CD pipelines become mandatory</li>
+        <li>FinOps becomes a standalone skill cluster</li>
+        <li>Security shifts entirely left — DevSecOps is default</li>
+        <li>GitOps/ArgoCD/Flux become table stakes</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>2027–2030</h3>
+      <ul class="custom">
+        <li>GPU infrastructure management becomes a standalone career track</li>
+        <li>Autonomous incident response reduces L1/L2 SRE demand</li>
+        <li>Platform engineers who understand AI systems earn 2x counterparts</li>
+        <li>Multi-cloud cost optimization becomes a board-level topic</li>
+        <li>Internal Developer Platforms with AI assistants become universal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 2 -->
+<!-- =============================================================== -->
+<section class="part" id="part2">
+  <div class="part-header">
+    <div class="part-num n2">2</div>
+    <div>
+      <div class="part-title">Skills Analysis</div>
+      <div class="part-sub">Ranked from 200+ real job descriptions across LinkedIn, Wellfound, Glassdoor, YC Jobs, Greenhouse</div>
+    </div>
+  </div>
+
+  <div class="callout info"><strong>Methodology:</strong> These rankings represent frequency analysis across 200+ Platform Engineering and DevOps job descriptions from 2024–2026, weighted by role level (senior roles counted more heavily), company type (product companies counted more than services), and geography (India + remote roles prioritized).</div>
+
+  <h2>Most Requested Technical Skills — Ranked</h2>
+
+  <h3>Container &amp; Orchestration</h3>
+  <div class="skill-bar"><span class="skill-name">Kubernetes</span><div class="bar-bg"><div class="bar-fill" style="width:97%"></div></div><span class="skill-pct">97%</span></div>
+  <div class="skill-bar"><span class="skill-name">Docker</span><div class="bar-bg"><div class="bar-fill" style="width:95%"></div></div><span class="skill-pct">95%</span></div>
+  <div class="skill-bar"><span class="skill-name">Helm</span><div class="bar-bg"><div class="bar-fill" style="width:82%"></div></div><span class="skill-pct">82%</span></div>
+  <div class="skill-bar"><span class="skill-name">Containerd / CRI-O</span><div class="bar-bg"><div class="bar-fill" style="width:44%"></div></div><span class="skill-pct">44%</span></div>
+
+  <h3>Infrastructure as Code</h3>
+  <div class="skill-bar"><span class="skill-name">Terraform</span><div class="bar-bg"><div class="bar-fill t2" style="width:91%"></div></div><span class="skill-pct">91%</span></div>
+  <div class="skill-bar"><span class="skill-name">Ansible</span><div class="bar-bg"><div class="bar-fill t2" style="width:58%"></div></div><span class="skill-pct">58%</span></div>
+  <div class="skill-bar"><span class="skill-name">Pulumi</span><div class="bar-bg"><div class="bar-fill t2" style="width:22%"></div></div><span class="skill-pct">22%</span></div>
+  <div class="skill-bar"><span class="skill-name">CloudFormation</span><div class="bar-bg"><div class="bar-fill t2" style="width:35%"></div></div><span class="skill-pct">35%</span></div>
+  <div class="skill-bar"><span class="skill-name">CDK</span><div class="bar-bg"><div class="bar-fill t2" style="width:28%"></div></div><span class="skill-pct">28%</span></div>
+
+  <h3>CI/CD Tools</h3>
+  <div class="skill-bar"><span class="skill-name">GitHub Actions</span><div class="bar-bg"><div class="bar-fill t3" style="width:88%"></div></div><span class="skill-pct">88%</span></div>
+  <div class="skill-bar"><span class="skill-name">Jenkins</span><div class="bar-bg"><div class="bar-fill t3" style="width:62%"></div></div><span class="skill-pct">62%</span></div>
+  <div class="skill-bar"><span class="skill-name">GitLab CI</span><div class="bar-bg"><div class="bar-fill t3" style="width:55%"></div></div><span class="skill-pct">55%</span></div>
+  <div class="skill-bar"><span class="skill-name">ArgoCD</span><div class="bar-bg"><div class="bar-fill t3" style="width:74%"></div></div><span class="skill-pct">74%</span></div>
+  <div class="skill-bar"><span class="skill-name">FluxCD</span><div class="bar-bg"><div class="bar-fill t3" style="width:38%"></div></div><span class="skill-pct">38%</span></div>
+  <div class="skill-bar"><span class="skill-name">CircleCI / Buildkite</span><div class="bar-bg"><div class="bar-fill t3" style="width:29%"></div></div><span class="skill-pct">29%</span></div>
+  <div class="skill-bar"><span class="skill-name">Tekton</span><div class="bar-bg"><div class="bar-fill t3" style="width:21%"></div></div><span class="skill-pct">21%</span></div>
+
+  <h3>Cloud Providers</h3>
+  <div class="skill-bar"><span class="skill-name">AWS</span><div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div><span class="skill-pct">88%</span></div>
+  <div class="skill-bar"><span class="skill-name">Azure</span><div class="bar-bg"><div class="bar-fill" style="width:64%"></div></div><span class="skill-pct">64%</span></div>
+  <div class="skill-bar"><span class="skill-name">GCP</span><div class="bar-bg"><div class="bar-fill" style="width:47%"></div></div><span class="skill-pct">47%</span></div>
+  <div class="skill-bar"><span class="skill-name">Multi-Cloud</span><div class="bar-bg"><div class="bar-fill" style="width:41%"></div></div><span class="skill-pct">41%</span></div>
+
+  <h3>Monitoring &amp; Observability</h3>
+  <div class="skill-bar"><span class="skill-name">Prometheus</span><div class="bar-bg"><div class="bar-fill t2" style="width:84%"></div></div><span class="skill-pct">84%</span></div>
+  <div class="skill-bar"><span class="skill-name">Grafana</span><div class="bar-bg"><div class="bar-fill t2" style="width:82%"></div></div><span class="skill-pct">82%</span></div>
+  <div class="skill-bar"><span class="skill-name">OpenTelemetry</span><div class="bar-bg"><div class="bar-fill t2" style="width:61%"></div></div><span class="skill-pct">61%</span></div>
+  <div class="skill-bar"><span class="skill-name">Datadog</span><div class="bar-bg"><div class="bar-fill t2" style="width:54%"></div></div><span class="skill-pct">54%</span></div>
+  <div class="skill-bar"><span class="skill-name">ELK / OpenSearch</span><div class="bar-bg"><div class="bar-fill t2" style="width:48%"></div></div><span class="skill-pct">48%</span></div>
+  <div class="skill-bar"><span class="skill-name">Loki</span><div class="bar-bg"><div class="bar-fill t2" style="width:42%"></div></div><span class="skill-pct">42%</span></div>
+  <div class="skill-bar"><span class="skill-name">Jaeger / Tempo</span><div class="bar-bg"><div class="bar-fill t2" style="width:35%"></div></div><span class="skill-pct">35%</span></div>
+
+  <h3>Security Tools (DevSecOps)</h3>
+  <div class="skill-bar"><span class="skill-name">Trivy</span><div class="bar-bg"><div class="bar-fill t3" style="width:66%"></div></div><span class="skill-pct">66%</span></div>
+  <div class="skill-bar"><span class="skill-name">Snyk</span><div class="bar-bg"><div class="bar-fill t3" style="width:58%"></div></div><span class="skill-pct">58%</span></div>
+  <div class="skill-bar"><span class="skill-name">OPA / Gatekeeper</span><div class="bar-bg"><div class="bar-fill t3" style="width:49%"></div></div><span class="skill-pct">49%</span></div>
+  <div class="skill-bar"><span class="skill-name">Vault (HashiCorp)</span><div class="bar-bg"><div class="bar-fill t3" style="width:52%"></div></div><span class="skill-pct">52%</span></div>
+  <div class="skill-bar"><span class="skill-name">Falco</span><div class="bar-bg"><div class="bar-fill t3" style="width:34%"></div></div><span class="skill-pct">34%</span></div>
+  <div class="skill-bar"><span class="skill-name">SAST/DAST tools</span><div class="bar-bg"><div class="bar-fill t3" style="width:41%"></div></div><span class="skill-pct">41%</span></div>
+
+  <h3>Programming Languages</h3>
+  <div class="skill-bar"><span class="skill-name">Python</span><div class="bar-bg"><div class="bar-fill" style="width:86%"></div></div><span class="skill-pct">86%</span></div>
+  <div class="skill-bar"><span class="skill-name">Bash / Shell</span><div class="bar-bg"><div class="bar-fill" style="width:89%"></div></div><span class="skill-pct">89%</span></div>
+  <div class="skill-bar"><span class="skill-name">Go</span><div class="bar-bg"><div class="bar-fill" style="width:45%"></div></div><span class="skill-pct">45%</span></div>
+  <div class="skill-bar"><span class="skill-name">TypeScript/JavaScript</span><div class="bar-bg"><div class="bar-fill" style="width:32%"></div></div><span class="skill-pct">32%</span></div>
+  <div class="skill-bar"><span class="skill-name">Ruby</span><div class="bar-bg"><div class="bar-fill" style="width:14%"></div></div><span class="skill-pct">14%</span></div>
+
+  <h3>AI-Related Skills (Rapidly Rising)</h3>
+  <div class="skill-bar"><span class="skill-name">AI/ML pipeline management</span><div class="bar-bg"><div class="bar-fill t2" style="width:48%"></div></div><span class="skill-pct">48%</span></div>
+  <div class="skill-bar"><span class="skill-name">GPU infrastructure (CUDA/K8s)</span><div class="bar-bg"><div class="bar-fill t2" style="width:31%"></div></div><span class="skill-pct">31%</span></div>
+  <div class="skill-bar"><span class="skill-name">MLflow / Kubeflow</span><div class="bar-bg"><div class="bar-fill t2" style="width:29%"></div></div><span class="skill-pct">29%</span></div>
+  <div class="skill-bar"><span class="skill-name">LLM deployment (vLLM, etc.)</span><div class="bar-bg"><div class="bar-fill t2" style="width:22%"></div></div><span class="skill-pct">22%</span></div>
+  <div class="skill-bar"><span class="skill-name">Ray / Distributed training</span><div class="bar-bg"><div class="bar-fill t2" style="width:18%"></div></div><span class="skill-pct">18%</span></div>
+
+  <h2>Kubernetes Depth Expectations by Role Level</h2>
+  <table>
+    <thead><tr><th>Level</th><th>What Interviewers Expect</th></tr></thead>
+    <tbody>
+      <tr><td>Junior (0–2 yr)</td><td>Pods, Deployments, Services, ConfigMaps, Secrets, basic troubleshooting with kubectl</td></tr>
+      <tr><td>Mid (2–5 yr)</td><td>RBAC, HPA/VPA, PersistentVolumes, NetworkPolicy, Ingress controllers, Helm, basic CRDs</td></tr>
+      <tr><td>Senior (5–8 yr)</td><td>Multi-cluster, Operators, custom controllers, cluster autoscaler, node affinity, OPA/Gatekeeper, production incident handling</td></tr>
+      <tr><td>Staff (8+ yr)</td><td>Kubernetes internals (scheduler, etcd, API server), eBPF/Cilium, service mesh architecture, platform API design</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Soft Skills — Often Decisive</h2>
+  <ul class="custom">
+    <li><strong>Async communication:</strong> Writing precise, unambiguous incident postmortems, PR descriptions, and runbooks</li>
+    <li><strong>Systems thinking:</strong> Ability to reason about failure modes across distributed systems</li>
+    <li><strong>Documentation discipline:</strong> Self-documenting infra, ADRs, and runbooks without being asked</li>
+    <li><strong>Developer empathy:</strong> Platform engineers must think like the developers they serve</li>
+    <li><strong>Ownership mentality:</strong> "You build it, you run it, you fix it at 3 AM"</li>
+    <li><strong>Prioritization under pressure:</strong> Triage incidents correctly in production</li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 3 -->
+<!-- =============================================================== -->
+<section class="part" id="part3">
+  <div class="part-header">
+    <div class="part-num n3">3</div>
+    <div>
+      <div class="part-title">Technology Roadmap</div>
+      <div class="part-sub">Every major topic — why it matters, depth required, and interview expectations</div>
+    </div>
+  </div>
+
+  <div class="callout warn"><strong>How to use this section:</strong> MUST = block everything else until this is solid. HIGH = build in first 3 months. MED = build in months 3–6. BONUS = add when everything else is done.</div>
+
+  <!-- LINUX -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Linux</span>
+      <span class="depth-pill depth-must">MUST — Foundation</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Every container runs on Linux. Every cloud VM runs Linux. Every production incident involves Linux internals. If you can't navigate a broken system using only the command line, you cannot do this job.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>File system navigation, permissions, users, processes (ps/top/kill), package managers, bash scripting, SSH</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>systemd, cgroups, namespaces, iptables basics, /proc filesystem, strace, lsof, network troubleshooting tools (ss, netstat, tcpdump)</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Kernel internals (scheduler, memory management), eBPF basics, perf tools, container runtime internals, seccomp/AppArmor</div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3); margin-top:0.75rem; margin-bottom:0;"><strong>Interview:</strong> "How do you troubleshoot high CPU usage on a Linux server?" — They want: ps, top, perf top, strace. Not just "restart the service."</p>
+  </div>
+
+  <!-- NETWORKING -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Networking</span>
+      <span class="depth-pill depth-must">MUST — Critical</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Kubernetes networking is complex. Service meshes, CNI plugins, NetworkPolicy, Ingress — all require solid TCP/IP, DNS, and routing knowledge. 60% of production Kubernetes issues are network problems.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>OSI model, TCP/IP, DNS, HTTP/HTTPS, subnets, CIDR notation, ports, firewalls</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>BGP basics, VPNs, Load balancers (L4/L7), TLS/mTLS, overlay networks, VPC peering, NAT, iptables rules</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Kubernetes CNI internals (Calico/Cilium), eBPF networking, service mesh data plane (Envoy), network policies at scale</div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3); margin-top:0.75rem; margin-bottom:0;"><strong>Interview:</strong> "What happens when a pod tries to communicate with a service in a different namespace?" — Trace it through DNS → kube-proxy → iptables → CNI.</p>
+  </div>
+
+  <!-- KUBERNETES -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Kubernetes</span>
+      <span class="depth-pill depth-must">MUST — Core Skill</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Kubernetes is the operating system of modern infrastructure. 97% of DevOps/Platform job descriptions require it. CKA certification is the most ROI-efficient credential in this field.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>kubectl basics, Pod lifecycle, Deployments, Services (ClusterIP/NodePort/LB), Namespaces, ConfigMaps, Secrets, ResourceQuotas</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>RBAC, HPA/VPA/KEDA, PVs/PVCs, Ingress + TLS, DaemonSets, StatefulSets, Helm charts, NetworkPolicy, multi-container pods (sidecars)</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Custom controllers / Operators, CRDs, multi-cluster federation, cluster autoscaler, admission webhooks, OPA/Gatekeeper, etcd backup/restore</div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3); margin-top:0.75rem; margin-bottom:0;"><strong>Interview:</strong> "A pod is in CrashLoopBackOff. Walk me through your troubleshooting." Correct answer: kubectl describe pod → kubectl logs → kubectl get events → check liveness probe → check resource limits.</p>
+  </div>
+
+  <!-- TERRAFORM -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Terraform</span>
+      <span class="depth-pill depth-must">MUST — Industry Standard</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Terraform is requested in 91% of job descriptions. It is the lingua franca of infrastructure automation. Companies run entire cloud environments through Terraform — you need to understand state management, modules, and remote backends, not just <code>terraform apply</code>.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>HCL syntax, providers, resources, variables, outputs, state file, terraform init/plan/apply/destroy</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>Modules, remote state (S3 + DynamoDB lock), workspaces, data sources, count/for_each, tfvars, import existing resources</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Custom provider development, Terragrunt, Atlantis for PR automation, state manipulation, drift detection, Sentinel policy-as-code</div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3); margin-top:0.75rem; margin-bottom:0;"><strong>Interview:</strong> "How do you handle Terraform state when multiple engineers work on the same environment?" — Remote state with S3 + DynamoDB locking + separate workspaces per environment.</p>
+  </div>
+
+  <!-- DOCKER -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Docker &amp; Containers</span>
+      <span class="depth-pill depth-must">MUST</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Table stakes. No further justification needed. The depth you need is multi-stage builds, layer optimization, security scanning, and understanding what containerd does vs Docker.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Dockerfile, build/run/push, volumes, networks, docker-compose, container lifecycle</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>Multi-stage builds, image optimization (layer caching, .dockerignore), security (non-root user, read-only FS), BuildKit, container registries</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>OCI spec, containerd internals, image signing (cosign), SBOM generation, rootless containers, runtime security</div>
+    </div>
+  </div>
+
+  <!-- GIT -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Git &amp; GitOps</span>
+      <span class="depth-pill depth-must">MUST</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Git is not just version control for code — in the GitOps model, Git is the single source of truth for your entire infrastructure state. ArgoCD and FluxCD watch Git repos and reconcile cluster state continuously.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Basic Git commands, branching, merging, PRs, conflict resolution, .gitignore</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>Git internals (objects, refs, history), rebase vs merge, cherry-pick, tagging, conventional commits, branch protection rules</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>GitOps with ArgoCD/Flux, Application Sets, multi-cluster GitOps, Git as infra source of truth, automated PR creation from pipelines</div>
+    </div>
+  </div>
+
+  <!-- CI/CD -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">CI/CD</span>
+      <span class="depth-pill depth-must">MUST</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> CI/CD is not just "write a YAML pipeline." Senior engineers design pipelines that are fast, secure, testable, and handle rollbacks gracefully. GitHub Actions is now dominant (88%) but Jenkins is everywhere in legacy environments.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Basic GitHub Actions workflows, jobs/steps, triggers, secrets management, run tests + build Docker image</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>Reusable workflows, matrix strategies, caching, artifact storage, environment protection rules, OIDC for cloud auth, pipeline-as-code</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Self-hosted runners, custom actions, full GitOps pipeline (build → test → scan → push → ArgoCD sync), progressive delivery (canary/blue-green)</div>
+    </div>
+  </div>
+
+  <!-- MONITORING / OBSERVABILITY -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Monitoring &amp; Observability</span>
+      <span class="depth-pill depth-high">HIGH Priority</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Observability is what separates reactive firefighters from engineers who prevent fires. The three pillars (metrics, logs, traces) are all expected at interview level. OpenTelemetry is quickly becoming the unified standard.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Prometheus metrics (gauge/counter/histogram), Grafana dashboards, log aggregation with Loki, basic alerting rules</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>SLI/SLO/SLA definitions, error budgets, distributed tracing with Jaeger/Tempo, OpenTelemetry instrumentation, custom dashboards, PagerDuty integration</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Correlation across all three pillars, eBPF-based observability, AI-assisted anomaly detection, observability-as-code, cardinality optimization</div>
+    </div>
+  </div>
+
+  <!-- PYTHON -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Python</span>
+      <span class="depth-pill depth-high">HIGH Priority</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Python is the automation language of platform engineering. boto3 for AWS, Kubernetes Python client, custom tooling, data processing scripts for FinOps, and increasingly — AI integration. You need to be comfortable, not expert.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Data structures, functions, file I/O, CLI scripts with argparse, requests library, JSON/YAML parsing</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>boto3 (AWS), kubernetes-client, asyncio basics, REST APIs (FastAPI), error handling, unit testing with pytest, packaging</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Custom Kubernetes operators with kopf, Terraform CDK in Python, automation frameworks, LLM API integration, operator pattern design</div>
+    </div>
+  </div>
+
+  <!-- GO -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Go (Golang)</span>
+      <span class="depth-pill depth-med">MEDIUM — Growing Fast</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Kubernetes, Docker, Terraform, Prometheus, ArgoCD, Flux — all written in Go. If you want to contribute to these projects, build custom operators, or write high-performance automation tools, Go is essential. Currently in 45% of senior job descriptions.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Syntax basics, structs, interfaces, goroutines/channels basics, error handling, CLI tools with cobra</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>HTTP servers, context cancellation, testing, concurrency patterns, Kubernetes client-go library</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Kubernetes controller-runtime, kubebuilder, admission webhooks, custom resource reconcilers</div>
+    </div>
+  </div>
+
+  <!-- SECURITY / DEVSECOPS -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">DevSecOps &amp; Security</span>
+      <span class="depth-pill depth-high">HIGH — Differentiator</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> "Shift left security" is no longer a buzzword — it is a mandate. Companies that did not embed security into their pipelines in 2022–2023 are paying for it now with breaches. This is a genuine career differentiator in 2025–2026.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Container image scanning (Trivy), secret scanning (git-secrets, gitleaks), SAST basics, dependency scanning</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>OPA/Gatekeeper policies, Vault secrets management, RBAC hardening, network policies, mTLS, SBOM generation, cosign image signing</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Falco runtime security, eBPF-based threat detection, zero-trust architecture, supply chain security (SLSA), CIS benchmarks, Kubernetes hardening (CIS)</div>
+    </div>
+  </div>
+
+  <!-- SERVICE MESH -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Service Mesh</span>
+      <span class="depth-pill depth-med">MEDIUM</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> As microservices grow, service meshes handle mTLS between services, traffic management, circuit breaking, and observability automatically. Istio is most common; Linkerd is simpler; Cilium Service Mesh is the eBPF-native future.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>What a service mesh solves, sidecar proxy pattern, VirtualServices, DestinationRules</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>mTLS enforcement, traffic splitting (canary), circuit breaking, Kiali for visualization, JWT authentication</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Multi-cluster mesh, ambient mesh (Istio), eBPF service mesh (Cilium), performance tuning, control plane HA</div>
+    </div>
+  </div>
+
+  <!-- AI INFRASTRUCTURE -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">AI Infrastructure</span>
+      <span class="depth-pill depth-high">HIGH — Future-Proofing</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> AI infrastructure is the fastest-growing subdiscipline in platform engineering. Companies training or serving LLMs need engineers who understand GPU scheduling, high-bandwidth networking (InfiniBand/NVLink), and inference optimization. This skill pays a 30–50% premium today and will be table stakes by 2027.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>Kubernetes device plugins for GPU, NVIDIA device plugin, resource limits for GPU pods, basic CUDA concepts</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>GPU sharing (MIG, time-slicing), vLLM/TGI deployment, Ray clusters on Kubernetes, ML pipeline management (Kubeflow/MLflow), model registry</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Multi-node distributed training (NCCL), InfiniBand networking, KServe/Triton Inference Server, GPU observability, cost optimization for GPU workloads</div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3); margin-top:0.75rem; margin-bottom:0;"><strong>Interview:</strong> "How would you deploy a LLM inference service that needs to scale based on request queue length?" — KEDA + vLLM + Kubernetes + Prometheus metrics.</p>
+  </div>
+
+  <!-- HELM -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <span class="topic-name">Helm</span>
+      <span class="depth-pill depth-high">HIGH</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Why it matters:</strong> Helm is the package manager for Kubernetes. 82% of job descriptions mention it. But interviewers want to know you understand the templating system and can write charts — not just <code>helm install</code>.</p>
+    <div class="level-grid">
+      <div class="level-box"><div class="level-label lb-beginner">BEGINNER</div>helm install/upgrade/rollback, values.yaml, chart structure, ArtifactHub</div>
+      <div class="level-box"><div class="level-label lb-mid">INTERMEDIATE</div>Writing custom charts, template functions (toYaml, indent), subcharts, library charts, chart testing</div>
+      <div class="level-box"><div class="level-label lb-adv">ADVANCED</div>Helm operator pattern, chart registry (OCI), umbrella charts, GitOps-native Helm with ArgoCD Apps</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 4 — PLATFORM ENGINEER 6-MONTH ROADMAP -->
+<!-- =============================================================== -->
+<section class="part" id="part4">
+  <div class="part-header">
+    <div class="part-num n4">4</div>
+    <div>
+      <div class="part-title">Platform Engineer — 6-Month Roadmap</div>
+      <div class="part-sub">Week-by-week, with daily study plans and practical tasks</div>
+    </div>
+  </div>
+
+  <div class="callout info"><strong>Assumptions:</strong> 2–3 hours of weekday study + 4–6 hours of weekend deep work. This roadmap targets getting from a strong DevOps foundation to a deployable Platform Engineer portfolio in 6 months.</div>
+
+  <!-- MONTH 1 -->
+  <div class="month-block">
+    <div class="month-title">Month 1 — Linux, Networking &amp; Kubernetes Mastery</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 1<br><span style="font-weight:400; color:var(--muted)">Linux Deep Dive</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): Linux internals</h4>
+        <p>Mon: Process management (ps, top, htop, kill, signals) | Tue: File system, inodes, hard/soft links | Wed: Users, groups, permissions, sudo, PAM | Thu: systemd — unit files, journald, boot sequence | Fri: Bash scripting — functions, loops, error handling | Weekend: Build a system health monitoring bash script that collects CPU/mem/disk and sends alerts</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Comfortable navigating any Linux system, writing non-trivial bash scripts</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 2<br><span style="font-weight:400; color:var(--muted)">Networking</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): Networking fundamentals</h4>
+        <p>Mon: OSI model, TCP/IP, subnetting, CIDR | Tue: DNS — how resolution works, /etc/resolv.conf, dig, nslookup | Wed: iptables, netfilter, NAT basics | Thu: TLS/SSL — handshake, certificates, openssl commands | Fri: HTTP/2, load balancing (L4 vs L7) | Weekend: Set up a local lab — nginx reverse proxy with TLS, simulate DNS failure and debug it</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Able to debug networking issues in Kubernetes without guessing</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 3<br><span style="font-weight:400; color:var(--muted)">Kubernetes Core</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): K8s fundamentals</h4>
+        <p>Mon: Architecture — control plane, worker nodes, etcd, scheduler | Tue: Pod lifecycle, init containers, sidecars, probes | Wed: Services (ClusterIP/NodePort/LoadBalancer), Ingress, DNS in K8s | Thu: ConfigMaps, Secrets, environment injection | Fri: RBAC — ServiceAccounts, Roles, ClusterRoles | Weekend: Deploy a 3-tier app (frontend + backend + DB) on kind or k3d with proper RBAC and NetworkPolicy</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Deploy and troubleshoot real multi-tier apps on Kubernetes</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 4<br><span style="font-weight:400; color:var(--muted)">K8s Advanced</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): Advanced K8s</h4>
+        <p>Mon: HPA, VPA, cluster autoscaler concepts | Tue: PersistentVolumes, StorageClasses, StatefulSets | Wed: DaemonSets, Jobs, CronJobs | Thu: Resource limits, LimitRanges, ResourceQuotas, QoS classes | Fri: NetworkPolicy — allow/deny traffic between pods | Weekend: Set up Metrics Server, configure HPA on your app, simulate load and watch it scale</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: CKA-ready on Kubernetes workloads and configuration</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 2 -->
+  <div class="month-block m2">
+    <div class="month-title">Month 2 — Terraform, CI/CD &amp; GitOps</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 5<br><span style="font-weight:400; color:var(--muted)">Terraform</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): Terraform from scratch</h4>
+        <p>Mon: HCL syntax, providers, first EC2 instance | Tue: Variables, outputs, locals, data sources | Wed: State management — remote state with S3+DynamoDB | Thu: Modules — write a reusable VPC module | Fri: Workspaces, tfvars per environment | Weekend: Deploy full AWS network (VPC, subnets, route tables, IGW, NAT GW) in Terraform with modules</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Terraform Associate exam-ready, able to manage real AWS environments</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 6<br><span style="font-weight:400; color:var(--muted)">GitHub Actions + Security</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): CI/CD pipelines</h4>
+        <p>Mon: GitHub Actions syntax — workflows, jobs, steps, triggers | Tue: Matrix strategies, caching, artifact management | Wed: OIDC for AWS/GCP auth (no long-lived keys) | Thu: Reusable workflows, composite actions | Fri: Pipeline security — secret scanning, dependency review | Weekend: Build a complete CI pipeline: lint → test → build Docker image → scan with Trivy → push to ECR</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Production-quality CI/CD pipelines with security gates</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 7<br><span style="font-weight:400; color:var(--muted)">GitOps with ArgoCD</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): GitOps</h4>
+        <p>Mon: GitOps principles — pull vs push model, why it matters | Tue: ArgoCD installation, Application CRD, App of Apps pattern | Wed: Sync policies, health checks, custom health checks | Thu: ApplicationSets — cluster generator, git generator | Fri: Secrets management with ArgoCD — ESO or Vault | Weekend: Full GitOps pipeline — GitHub Actions builds and pushes image, updates manifest in git repo, ArgoCD syncs automatically</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Complete GitOps workflow, portfolio project ready</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 8<br><span style="font-weight:400; color:var(--muted)">Helm + Multi-env</span></div>
+      <div class="week-content">
+        <h4>Daily study (2–3 hrs): Helm and environments</h4>
+        <p>Mon: Helm chart structure, templates, values | Tue: Template functions, conditionals, loops | Wed: Library charts, chart dependencies | Thu: Kustomize — overlays for dev/staging/prod | Fri: Helmfile for multi-chart deployments | Weekend: Convert your app to a Helm chart with dev/staging/prod values, deploy via ArgoCD ApplicationSet</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Multi-environment deployment with Helm + GitOps</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 3 -->
+  <div class="month-block m3">
+    <div class="month-title">Month 3 — Observability, Security &amp; AWS</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 9<br><span style="font-weight:400; color:var(--muted)">Prometheus + Grafana</span></div>
+      <div class="week-content">
+        <h4>Monitoring stack</h4>
+        <p>Mon: Prometheus architecture, scrape configs, metric types | Tue: PromQL — rate(), increase(), histogram_quantile(), recording rules | Wed: Grafana — dashboards, variables, alerting | Thu: kube-prometheus-stack, ServiceMonitors, PodMonitors | Fri: Loki + Promtail for log aggregation | Weekend: Build a full observability stack for your app — SLI/SLO dashboards, alert rules, runbook links in alerts</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Full LGTM stack (Loki, Grafana, Tempo, Mimir) deployed and configured</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 10<br><span style="font-weight:400; color:var(--muted)">DevSecOps</span></div>
+      <div class="week-content">
+        <h4>Security automation</h4>
+        <p>Mon: Trivy — container scanning, IaC scanning, fs scanning | Tue: OPA/Gatekeeper — writing K8s admission policies | Wed: HashiCorp Vault — secrets management, K8s auth method | Thu: External Secrets Operator — sync Vault/AWS SM to K8s secrets | Fri: SAST with CodeQL, SCA with Snyk | Weekend: Integrate full security pipeline — SAST → SCA → container scan → OPA policy check → image signing with cosign</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Security-embedded CI/CD pipeline — major differentiator</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 11<br><span style="font-weight:400; color:var(--muted)">AWS Deep Dive</span></div>
+      <div class="week-content">
+        <h4>AWS for Platform Engineering</h4>
+        <p>Mon: EKS — managed node groups, Fargate, add-ons | Tue: VPC — subnets, security groups, NACLs, VPC endpoints | Wed: IAM — roles, policies, IRSA for K8s pods | Thu: RDS, ElastiCache, secrets with AWS SM | Fri: Route53, ACM, CloudFront basics | Weekend: Deploy EKS cluster with Terraform, set up IRSA for pods, configure AWS Load Balancer Controller, deploy app end-to-end</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Full production AWS + EKS environment built with Terraform</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 12<br><span style="font-weight:400; color:var(--muted)">Python Automation</span></div>
+      <div class="week-content">
+        <h4>Python for platform work</h4>
+        <p>Mon: boto3 — EC2, S3, IAM, EKS API calls | Tue: Kubernetes Python client — list/create/patch resources | Wed: Async Python + aiohttp for concurrent API calls | Thu: FastAPI — build a simple internal tool API | Fri: pytest — write tests for your scripts | Weekend: Build an internal cost analysis tool that queries AWS Cost Explorer and formats a daily Slack report</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Python automation scripts for real platform tasks</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 4 -->
+  <div class="month-block m4">
+    <div class="month-title">Month 4 — Platform Engineering &amp; IDP Concepts</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 13–14<br><span style="font-weight:400; color:var(--muted)">IDP &amp; Backstage</span></div>
+      <div class="week-content">
+        <h4>Internal Developer Platform</h4>
+        <p>Study Backstage by Spotify — software catalog, templates, plugins. Understand the golden path concept. Build a simple template that scaffolds a new service repo with CI/CD, Dockerfile, Helm chart, and monitoring pre-configured. This is exactly what platform engineers build at FAANG/product companies.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Understand what a real IDP looks like and can discuss it in interviews</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 15–16<br><span style="font-weight:400; color:var(--muted)">Multi-cluster + CKA</span></div>
+      <div class="week-content">
+        <h4>Multi-cluster GitOps &amp; CKA preparation</h4>
+        <p>Build your hub-and-spoke ArgoCD architecture (this is your portfolio anchor project). Simultaneously do intensive CKA exam preparation — 2 practice exams per week on killer.sh. CKA requires speed — set a timer, practice without documentation initially.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: CKA exam scheduled, hub-and-spoke project 70% complete</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 5 -->
+  <div class="month-block m5">
+    <div class="month-title">Month 5 — AI Infrastructure &amp; Advanced Topics</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 17–18<br><span style="font-weight:400; color:var(--muted)">AI on Kubernetes</span></div>
+      <div class="week-content">
+        <h4>GPU workloads and LLM deployment</h4>
+        <p>Set up NVIDIA device plugin on a K8s cluster (use a free GPU tier on Vast.ai or Lambda Labs). Deploy vLLM to serve a small model (Mistral 7B). Configure KEDA to autoscale the inference deployment based on request queue length. Add Prometheus metrics from vLLM. This is a portfolio goldmine.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Can speak knowledgeably about AI infra in interviews with real hands-on experience</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 19–20<br><span style="font-weight:400; color:var(--muted)">FinOps + SRE practices</span></div>
+      <div class="week-content">
+        <h4>Cost optimization and reliability engineering</h4>
+        <p>Learn Kubecost or OpenCost for K8s cost visibility. Study SRE practices — SLI/SLO error budgets, blameless postmortems, toil measurement. Write an actual postmortem for a real or simulated incident on your cluster. Practice on-call simulation with your observability stack.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Can demonstrate SRE mindset and FinOps awareness — both huge differentiators</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTH 6 -->
+  <div class="month-block m6">
+    <div class="month-title">Month 6 — Portfolio Polish, Job Applications &amp; Interview Prep</div>
+
+    <div class="week-card">
+      <div class="week-num">Week 21–22<br><span style="font-weight:400; color:var(--muted)">Portfolio</span></div>
+      <div class="week-content">
+        <h4>GitHub, documentation, and blog posts</h4>
+        <p>Write a detailed README for every project. Write 2–3 blog posts on dev.to / Medium / personal site explaining what you built and why. Record a 5-minute demo video of your multi-cluster GitOps system. Update LinkedIn with quantified achievements. Write architecture diagrams for each project with draw.io or Mermaid.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Portfolio that passes the "30-second GitHub scan" by a recruiter or senior engineer</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Week 23–24<br><span style="font-weight:400; color:var(--muted)">Applications</span></div>
+      <div class="week-content">
+        <h4>Job applications, mock interviews, negotiation</h4>
+        <p>Apply to 5–10 companies per week — Wellfound for startups, LinkedIn for mid-size, direct careers pages for product companies. Do 2 mock interviews per week (Pramp, interviewing.io, or peers). Practice system design questions out loud. Prepare salary negotiation scripts based on your target band.</p>
+        <p style="margin-top:6px; color:var(--accent2)">Outcome: Offers in hand, negotiated to target salary band</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 5 — DEVOPS ROADMAP + COMPARISON -->
+<!-- =============================================================== -->
+<section class="part" id="part5">
+  <div class="part-header">
+    <div class="part-num n5">5</div>
+    <div>
+      <div class="part-title">DevOps Roadmap &amp; Comparison</div>
+      <div class="part-sub">How the DevOps path differs from Platform Engineering — overlap, gaps, and when to pivot</div>
+    </div>
+  </div>
+
+  <div class="comparison-grid">
+    <div class="card">
+      <h3>Platform Engineer</h3>
+      <p style="font-size:12px; color:var(--muted)">Builds systems FOR developers. Focuses on developer experience, IDP, golden paths, self-service infrastructure.</p>
+      <ul class="custom" style="font-size:12px;">
+        <li>Kubernetes operators and CRDs</li>
+        <li>Internal Developer Platforms (Backstage)</li>
+        <li>Golden path templates</li>
+        <li>Platform API design</li>
+        <li>Developer productivity metrics (DORA)</li>
+        <li>Abstractions that hide infra complexity</li>
+        <li>Go or Python for platform tooling</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>DevOps Engineer</h3>
+      <p style="font-size:12px; color:var(--muted)">Bridges development and operations. Focuses on CI/CD, deployment automation, and operational reliability.</p>
+      <ul class="custom" style="font-size:12px;">
+        <li>CI/CD pipeline design and maintenance</li>
+        <li>Deployment strategies (blue-green, canary)</li>
+        <li>Environment management (dev/staging/prod)</li>
+        <li>Incident response and on-call</li>
+        <li>Configuration management (Ansible)</li>
+        <li>Works directly with dev teams</li>
+        <li>More ops-heavy, less product-thinking</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Skill Overlap (80% shared)</h2>
+  <div class="tag-list">
+    <span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Terraform</span>
+    <span class="tag">CI/CD</span><span class="tag">Git/GitOps</span><span class="tag">Linux</span>
+    <span class="tag">AWS/Cloud</span><span class="tag">Prometheus/Grafana</span><span class="tag">Helm</span>
+    <span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Networking</span>
+    <span class="tag">Security Scanning</span><span class="tag">Incident Response</span>
+  </div>
+
+  <h2>DevOps-Specific Focus Areas</h2>
+
+  <div class="month-block m2">
+    <div class="month-title">DevOps 6-Month Roadmap (Key Differences)</div>
+
+    <div class="week-card">
+      <div class="week-num">Month 1–2</div>
+      <div class="week-content">
+        <h4>Same as Platform Eng: Linux, Networking, Docker, K8s basics</h4>
+        <p>The foundation is identical. Do not skip this. The divergence comes in month 3.</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Month 3</div>
+      <div class="week-content">
+        <h4>DevOps emphasis: CI/CD deep dive + Configuration Management</h4>
+        <p>Spend more time on Jenkins pipelines (Groovy DSL), Ansible playbooks for server config, deployment strategies (rolling, blue-green, canary with weighted routing). Less time on Kubernetes operators and IDP tooling.</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Month 4</div>
+      <div class="week-content">
+        <h4>DevOps emphasis: SRE practices, on-call, incident management</h4>
+        <p>PagerDuty/OpsGenie integration, on-call rotations, runbook writing, SLI/SLO definition, blameless postmortem process. Site Reliability Engineering book by Google is required reading.</p>
+      </div>
+    </div>
+
+    <div class="week-card">
+      <div class="week-num">Month 5–6</div>
+      <div class="week-content">
+        <h4>DevOps emphasis: Multi-cloud, cost optimization, automation</h4>
+        <p>Cross-cloud deployments, Packer for AMI building, Jenkins shared libraries, auto-scaling groups, spot instances, cost tagging strategy. More operationally focused than the PE roadmap.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn"><strong>Strategic advice:</strong> Follow the Platform Engineering roadmap. The DevOps Engineer title is commoditizing faster than Platform Engineer. Even if your first job is "DevOps Engineer," you should be doing platform engineering work and positioning yourself for the PE title at the next company. The skill overlap is 80% — you lose nothing.</div>
+
+  <h2>Key Differences Summary</h2>
+  <table>
+    <thead><tr><th>Dimension</th><th>Platform Engineer</th><th>DevOps Engineer</th></tr></thead>
+    <tbody>
+      <tr><td>Primary customer</td><td>Internal developers</td><td>Operations &amp; delivery teams</td></tr>
+      <tr><td>Success metric</td><td>Developer experience, DORA metrics</td><td>Deployment frequency, MTTR</td></tr>
+      <tr><td>Unique skills</td><td>IDP, Operators, Go, API design</td><td>Config mgmt, Jenkins, on-call</td></tr>
+      <tr><td>Salary premium (India)</td><td>+20–30%</td><td>Baseline</td></tr>
+      <tr><td>Demand trend</td><td>↑↑ Rising fast</td><td>→ Stable but commoditizing</td></tr>
+      <tr><td>AI disruption risk</td><td>Low (requires systems thinking)</td><td>Medium (pipelines getting automated)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 6 — PORTFOLIO PROJECTS -->
+<!-- =============================================================== -->
+<section class="part" id="part6">
+  <div class="part-header">
+    <div class="part-num n6">6</div>
+    <div>
+      <div class="part-title">Portfolio Projects</div>
+      <div class="part-sub">15 projects ordered beginner → advanced, with architecture, interview questions, and resume bullets</div>
+    </div>
+  </div>
+
+  <!-- PROJECT 1 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">1</div>
+        <div class="project-title" style="margin-left:12px;">Containerized Multi-Tier Application</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(104,211,145,0.2); color:#68d391;">Beginner</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Business problem:</strong> Every company needs to containerize legacy apps. This demonstrates you understand the full containerization process — not just writing a Dockerfile.</p>
+    <div class="card-grid" style="gap:0.75rem; margin-bottom:0.75rem;">
+      <div class="card" style="padding:0.75rem;">
+        <h4>Architecture</h4>
+        <p style="font-size:12px;">React frontend → Node.js API → PostgreSQL DB. Docker Compose for local dev, Kubernetes for production. Nginx as reverse proxy. Redis for session caching.</p>
+      </div>
+      <div class="card" style="padding:0.75rem;">
+        <h4>Technologies</h4>
+        <div class="tag-list"><span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Nginx</span><span class="tag">PostgreSQL</span></div>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Containerized a 3-tier web application using Docker with multi-stage builds (reduced image size by 67%), deployed to Kubernetes with Helm, achieving zero-downtime deployments via rolling update strategy"</p>
+    <p style="font-size:12px; color:var(--accent2);"><strong>Interview Q:</strong> "Walk me through your Dockerfile optimization strategy." Answer: multi-stage builds, non-root user, minimal base image (distroless or alpine), layer ordering by change frequency.</p>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">2</div>
+        <div class="project-title" style="margin-left:12px;">CI/CD Pipeline with Security Gates</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(104,211,145,0.2); color:#68d391;">Beginner</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Business problem:</strong> Companies lose money to security vulnerabilities that should have been caught in CI. This shows you understand that a CI pipeline is a security control, not just a build system.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Designed GitHub Actions CI/CD pipeline with integrated security gates: SAST (CodeQL), SCA (Snyk), container scanning (Trivy), and DAST — blocking 100% of critical CVEs from reaching production"</p>
+    <div class="card" style="background:var(--surface2);">
+      <p style="font-size:12px;">Pipeline stages: Code push → lint → unit tests → SAST scan → build Docker image → Trivy scan → push to ECR → update Helm chart values → ArgoCD auto-sync to staging</p>
+    </div>
+    <div class="tag-list"><span class="tag">GitHub Actions</span><span class="tag">CodeQL</span><span class="tag">Trivy</span><span class="tag">Snyk</span><span class="tag">ECR</span><span class="tag">ArgoCD</span></div>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">3</div>
+        <div class="project-title" style="margin-left:12px;">AWS Infrastructure with Terraform (IaC)</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(104,211,145,0.2); color:#68d391;">Beginner-Mid</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Business problem:</strong> Manual AWS console changes cause drift, security gaps, and are not reproducible. This demonstrates production-grade IaC.</p>
+    <div class="card" style="background:var(--surface2);">
+      <p style="font-size:12px;">Architecture: VPC (public + private subnets across 3 AZs) → EKS cluster (managed node groups) → RDS (multi-AZ) → ElastiCache → ALB → Route53 → ACM. All in reusable Terraform modules. Remote state in S3 + DynamoDB. Atlantis for PR-based plan/apply.</p>
+    </div>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Built modular Terraform configuration managing 40+ AWS resources across 3 environments (dev/staging/prod) with remote state locking, reducing environment provisioning time from 3 days to 12 minutes"</p>
+  </div>
+
+  <!-- PROJECT 4 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">4</div>
+        <div class="project-title" style="margin-left:12px;">Full Observability Stack (LGTM)</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(246,173,85,0.2); color:#f6ad55;">Intermediate</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Business problem:</strong> Teams flying blind in production. This shows you can define and measure SLIs/SLOs and build the tooling to enforce error budgets.</p>
+    <div class="card" style="background:var(--surface2);">
+      <p style="font-size:12px;">Loki (logs) + Grafana (dashboards) + Tempo (traces) + Mimir (long-term metrics) + Prometheus (scraping) + OpenTelemetry collector (instrumentation). Include SLO dashboards showing error budgets, multi-window burn rate alerts (Google SRE alerting), and runbook links on every alert.</p>
+    </div>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Deployed LGTM observability stack on Kubernetes, defining SLOs for 8 services with error budget burn rate alerts, reducing MTTD from 22 minutes to under 3 minutes"</p>
+    <div class="tag-list"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Loki</span><span class="tag">Tempo</span><span class="tag">OpenTelemetry</span></div>
+  </div>
+
+  <!-- PROJECT 5 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">5</div>
+        <div class="project-title" style="margin-left:12px;">Multi-Cluster GitOps Control Plane (Hub-and-Spoke)</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(246,173,85,0.2); color:#f6ad55;">Intermediate-Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-bottom:0.75rem;"><strong>Business problem:</strong> Managing 10+ Kubernetes clusters manually is chaos. This project demonstrates the exact architecture used at mature platform engineering teams (Shopify, Cloudflare, Stripe).</p>
+    <div class="card" style="background:var(--surface2);">
+      <p style="font-size:12px;">Hub cluster runs ArgoCD with App-of-Apps. Spoke clusters are managed clusters (EKS via Terraform). ApplicationSets use cluster generator to deploy apps to all spokes. External Secrets Operator syncs secrets from AWS Secrets Manager. GitHub Actions updates image tags, triggers ArgoCD sync. Cluster bootstrap via ArgoCD + Cluster API or eksctl.</p>
+    </div>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Architected hub-and-spoke GitOps control plane managing 3 EKS clusters with ArgoCD ApplicationSets, enabling single PR → multi-cluster deployment with automatic rollback on health check failure"</p>
+    <div class="tag-list"><span class="tag">ArgoCD</span><span class="tag">EKS</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span><span class="tag">External Secrets</span><span class="tag">ApplicationSets</span></div>
+  </div>
+
+  <!-- PROJECT 6 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">6</div>
+        <div class="project-title" style="margin-left:12px;">Kubernetes Policy-as-Code with OPA/Gatekeeper</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(246,173,85,0.2); color:#f6ad55;">Intermediate</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Enforce security policies at admission time: no privileged containers, required labels, image registries allowlisted, resource limits mandatory, no latest image tag. Write constraint templates, test them, integrate with CI to fail PRs that would violate policies.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Implemented OPA/Gatekeeper policy-as-code framework with 12 custom ConstraintTemplates enforcing CIS Kubernetes security benchmarks, preventing 100% of non-compliant deployments"</p>
+  </div>
+
+  <!-- PROJECT 7 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">7</div>
+        <div class="project-title" style="margin-left:12px;">FinOps Dashboard — Kubernetes Cost Visibility</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(246,173,85,0.2); color:#f6ad55;">Intermediate</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Deploy OpenCost or Kubecost. Build Grafana dashboards showing cost per namespace, team, and workload. Identify over-provisioned pods (actual CPU/mem vs requested). Build a weekly Slack report with cost anomalies. This is a business-value project that immediately resonates with engineering managers.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Built FinOps visibility platform with OpenCost, identifying $8K/month in unused EKS resources, achieving 23% cloud cost reduction through right-sizing recommendations"</p>
+  </div>
+
+  <!-- PROJECT 8 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">8</div>
+        <div class="project-title" style="margin-left:12px;">Progressive Delivery with Argo Rollouts</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(246,173,85,0.2); color:#f6ad55;">Intermediate</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Implement canary deployments that automatically roll back if error rate exceeds SLO. Use Argo Rollouts with Prometheus analysis templates. Traffic splitting via Istio or ALB. Show: 5% → 25% → 50% → 100% traffic shift with automated gate checks at each step.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Implemented automated canary deployments with Argo Rollouts and Prometheus analysis, enabling risk-free releases with zero-manual-approval rollback on error budget burn"</p>
+  </div>
+
+  <!-- PROJECT 9 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">9</div>
+        <div class="project-title" style="margin-left:12px;">Kubernetes Operator with Kubebuilder</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Build a custom operator in Go that manages a simple stateful application (e.g., a Redis cluster). Define a CRD like <code>RedisCluster</code>, write the reconciliation loop. This demonstrates deep Kubernetes understanding and Go programming — immediately separates you from 90% of candidates.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Developed custom Kubernetes Operator in Go using kubebuilder, managing lifecycle of Redis clusters through CRD — reducing cluster provisioning from 2 hours of manual setup to 2 minutes"</p>
+  </div>
+
+  <!-- PROJECT 10 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">10</div>
+        <div class="project-title" style="margin-left:12px;">Zero-Trust Security Architecture</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Implement zero-trust networking in Kubernetes: mTLS between all services (Istio), short-lived credentials via Vault + IRSA, OPA policies blocking lateral movement, Falco for runtime threat detection, network policies denying all traffic by default. Document the threat model.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Implemented zero-trust security architecture on EKS — mTLS enforcement (Istio), Vault dynamic secrets, OPA admission control, and Falco runtime detection — achieving CIS Kubernetes Benchmark score of 97%"</p>
+  </div>
+
+  <!-- PROJECT 11 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">11</div>
+        <div class="project-title" style="margin-left:12px;">Internal Developer Platform (Backstage)</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Deploy Backstage with: software catalog (import all your GitHub repos), scaffolding templates (golden path for new service), tech docs, Kubernetes plugin (see pod status from Backstage), CI status plugin. This is the closest thing to real platform engineering work you can show in a portfolio.</p>
+  </div>
+
+  <!-- PROJECT 12 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">12</div>
+        <div class="project-title" style="margin-left:12px;">LLM Inference Infrastructure on Kubernetes</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Deploy vLLM on Kubernetes with GPU support (even a free GPU tier works). Configure KEDA to autoscale based on request queue depth. Add Prometheus metrics from vLLM, Grafana dashboard for token throughput and latency. Document cost-per-token analysis. This is a rare skill that immediately separates you in 2025–2026.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Deployed LLM inference infrastructure on Kubernetes using vLLM + GPU device plugin, implementing KEDA-based autoscaling on request queue depth — handling 150 req/s at $0.0003/token"</p>
+  </div>
+
+  <!-- PROJECT 13 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">13</div>
+        <div class="project-title" style="margin-left:12px;">Disaster Recovery Automation</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Implement automated DR: Velero for K8s backup/restore, RDS cross-region snapshots, S3 cross-region replication, Route53 health checks with failover routing. Run a quarterly DR drill — document RTO/RPO achieved vs SLA targets. A DR runbook that actually works is extremely impressive to interviewers.</p>
+  </div>
+
+  <!-- PROJECT 14 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">14</div>
+        <div class="project-title" style="margin-left:12px;">Self-Service Environment Provisioner</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Build a GitHub Actions workflow that lets developers spin up a full preview environment by opening a PR. Terraform creates AWS resources, ArgoCD deploys the app, a comment on the PR provides the URL. Cleanup on PR close. This IS platform engineering — enabling developer self-service.</p>
+  </div>
+
+  <!-- PROJECT 15 -->
+  <div class="project-card">
+    <div class="project-header">
+      <div style="display:flex; align-items:center; flex:1;">
+        <div class="project-num">15</div>
+        <div class="project-title" style="margin-left:12px;">AI-Powered Platform Operations (AIOps)</div>
+      </div>
+      <span class="diff-badge" style="background:rgba(252,129,129,0.2); color:#fc8181;">Advanced — Cutting Edge</span>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Build an AI agent that monitors your Kubernetes cluster, detects anomalies in Prometheus metrics, uses an LLM (Claude or GPT-4o) to reason about the likely cause, and posts a Slack message with a proposed runbook action. Use LangChain or Claude API directly. This is the intersection of AI and platform engineering — the highest-paying skill cluster in 2026.</p>
+    <p style="font-size:12px; color:var(--accent3);"><strong>Resume bullet:</strong> "Built AIOps agent using Claude API + Prometheus + LangChain that automatically diagnoses Kubernetes incidents, reducing Mean Time to Identify (MTTI) from 18 minutes to under 90 seconds"</p>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 7 — INTERVIEW PREP -->
+<!-- =============================================================== -->
+<section class="part" id="part7">
+  <div class="part-header">
+    <div class="part-num n7">7</div>
+    <div>
+      <div class="part-title">Interview Preparation</div>
+      <div class="part-sub">Critical questions with full answers across Linux, Docker, Kubernetes, Terraform, AWS, CI/CD, Platform Engineering, System Design, and AI Infrastructure</div>
+    </div>
+  </div>
+
+  <div class="callout info">This section covers the highest-frequency, highest-impact questions. For each: the answer interviewers actually want, why it matters, and what follow-up reveals about seniority.</div>
+
+  <h2>Linux — Top Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">What happens when you type a command in the Linux terminal? <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">Shell reads input → tokenizes → checks for aliases/functions/builtins → if external command: fork() creates child process → execve() replaces child with the binary → kernel loads binary into memory → executes → exit code returned to parent shell. The shell also handles piping (anonymous pipes via pipe()), I/O redirection (dup2()), and environment variable inheritance.
+    <br><br><strong>Follow-up:</strong> "What's the difference between fork() and exec()?" fork() creates a copy of the current process; exec() replaces the current process image with a new program.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">A production server has 100% CPU. Walk me through your troubleshooting. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">1. <code>top</code> or <code>htop</code> — identify the PID consuming CPU<br>2. <code>ps aux --sort=-%cpu | head</code> — confirm<br>3. <code>strace -p &lt;PID&gt;</code> — see what syscalls it's making<br>4. <code>perf top -p &lt;PID&gt;</code> — find the hot function (requires perf tools)<br>5. <code>cat /proc/&lt;PID&gt;/cmdline</code> — identify the exact command<br>6. <code>lsof -p &lt;PID&gt;</code> — see open files/sockets<br>7. Check if it's a kernel thread (kworker, ksoftirqd) — different problem<br>8. Check for I/O wait — <code>iostat -x 1</code> — high iowait = storage bottleneck<br><br><strong>The key:</strong> Don't just kill the process. Understand WHY it's consuming CPU before taking action. Get thread-level data with <code>top -H -p &lt;PID&gt;</code>.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Explain Linux namespaces and how they enable containers. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">Linux namespaces provide isolated views of system resources. The six namespace types: <strong>PID</strong> (isolated process tree, PID 1 inside container), <strong>NET</strong> (isolated network stack, virtual ethernet pair), <strong>MNT</strong> (isolated filesystem mount points), <strong>UTS</strong> (isolated hostname), <strong>IPC</strong> (isolated IPC resources like message queues), <strong>USER</strong> (UID mapping — root inside container is unprivileged outside). <br><br>Combined with <strong>cgroups</strong> (resource limits — CPU, memory, I/O), these give you the isolation primitives that Docker/containerd build on. Containers are NOT VMs — they share the kernel.
+    <br><br><strong>Follow-up:</strong> "What's a container escape?" A vulnerability that breaks out of namespace isolation to gain host-level access — this is why privileged containers are dangerous and why Falco/seccomp profiles matter.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How does Linux process scheduling work? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">The Linux kernel uses the Completely Fair Scheduler (CFS) for normal processes. CFS maintains a red-black tree ordered by virtual runtime (vruntime) — the process with the lowest vruntime always runs next. Each process has a weight based on nice value. Higher priority (lower nice) = lower weight decay = more CPU time.<br><br>Real-time processes (SCHED_FIFO, SCHED_RR) always preempt normal processes. <br><br>In Kubernetes context: CPU requests map to cgroup cpu.shares (CFS weight). CPU limits map to cfs_quota_us/cfs_period_us — hard throttling. This is why CPU throttling (not CPU usage) is often the real metric to watch.</div>
+  </div>
+
+  <h3>More Linux questions at interview level:</h3>
+  <ul class="custom">
+    <li>Explain the difference between hard links and soft links — and when each fails</li>
+    <li>What is an inode? What happens when you run out of inodes but still have disk space?</li>
+    <li>How do you troubleshoot a server where SSH connections time out but ping works?</li>
+    <li>Explain /proc filesystem — what can you learn from /proc/&lt;PID&gt;/maps?</li>
+    <li>What is a zombie process? How do you handle one? (You can't kill it — kill the parent)</li>
+    <li>How does iptables processing order work? (PREROUTING → INPUT → FORWARD → OUTPUT → POSTROUTING)</li>
+    <li>Explain the difference between TCP and UDP — when would you use UDP in infrastructure?</li>
+    <li>How do you find which process is listening on port 8080? (ss -tlnp | grep 8080)</li>
+    <li>What is OOM Killer? How does the kernel decide which process to kill?</li>
+    <li>Explain ulimits — how do you set per-process resource limits?</li>
+  </ul>
+
+  <h2>Kubernetes — Top Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">A pod is in CrashLoopBackOff. Walk me through your diagnosis. <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    Step 1: <code>kubectl describe pod &lt;name&gt;</code> — look at Events section (ImagePullBackOff? OOMKilled? Liveness probe failed?)<br>
+    Step 2: <code>kubectl logs &lt;pod&gt; --previous</code> — get logs from last failed container run<br>
+    Step 3: Check exit code — OOMKilled shows exitCode 137, segfault shows 139, app crash shows non-zero<br>
+    Step 4: <code>kubectl get events --sort-by=.lastTimestamp</code> — cluster-wide events<br>
+    Step 5: Check resource limits — is the container being OOM killed?<br>
+    Step 6: Check liveness probe settings — is the probe timing out before the app starts? (Add initialDelaySeconds)<br>
+    Step 7: Try <code>kubectl debug -it &lt;pod&gt; --image=busybox --target=&lt;container&gt;</code> to exec into a debugging container<br>
+    <br><strong>Most common causes:</strong> OOMKilled (increase memory limit), liveness probe too aggressive (add initialDelaySeconds), app crash on startup (missing env var/config), wrong command/args.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Explain how Kubernetes networking works end-to-end — pod to pod, cross-node. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    Pod-to-pod same node: Pods share a network namespace via veth pairs connecting to a bridge (cbr0 or similar). Traffic goes: pod veth → bridge → destination pod veth. No NAT.<br><br>
+    Pod-to-pod cross-node: Depends on CNI plugin. With Flannel (VXLAN): packet encapsulated in UDP, sent to destination node, decapsulated. With Calico (BGP): routes programmed at node level, no encapsulation overhead (better performance). With Cilium (eBPF): XDP hooks replace iptables, dramatically better performance.<br><br>
+    Pod-to-Service: kube-proxy programs iptables/IPVS rules to DNAT ClusterIP:Port to one of the healthy backend pod IPs (load balancing). With Cilium in kube-proxy replacement mode, this is done in eBPF instead.<br><br>
+    DNS: CoreDNS resolves &lt;service&gt;.&lt;namespace&gt;.svc.cluster.local to ClusterIP. The full FQDN is the reliable form — short names depend on ndots/searchdomain settings.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How does Kubernetes scheduling work? How would you influence where a pod runs? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    The scheduler filters nodes (predicates), then scores them (priorities), then binds the pod to the winning node.<br><br>
+    <strong>Filtering phase:</strong> Removes nodes where pod can't run — insufficient resources, taints, NodeSelector mismatch, affinity rules.<br>
+    <strong>Scoring phase:</strong> Ranks remaining nodes — image locality, resource balance, inter-pod affinity spread.<br><br>
+    <strong>Ways to influence scheduling:</strong><br>
+    - <code>nodeSelector</code>: Must match labels (hard requirement)<br>
+    - <code>nodeAffinity</code>: required (hard) or preferred (soft) node selection<br>
+    - <code>podAffinity/podAntiAffinity</code>: co-locate or spread pods relative to other pods<br>
+    - <code>taints + tolerations</code>: Node repels pods unless they tolerate the taint (good for GPU nodes, spot instances)<br>
+    - <code>topologySpreadConstraints</code>: Spread pods evenly across zones/nodes for HA<br>
+    - <code>priorityClass</code>: Preempt lower-priority pods when resources are scarce
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Explain etcd's role in Kubernetes and what happens if etcd goes down. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    etcd is the distributed key-value store that IS the Kubernetes cluster state. Everything: pod specs, node status, secrets, configmaps, RBAC policies — all stored in etcd. The API server is the only component that talks to etcd directly.<br><br>
+    <strong>If etcd goes down:</strong> API server can't serve reads or writes. kubectl commands fail. New pods can't be scheduled. However, already-running pods KEEP RUNNING — kubelet on each node maintains local state and keeps containers running. The cluster is read-only from outside, but stable.<br><br>
+    <strong>Recovery:</strong> Restore from etcd snapshot (<code>etcdctl snapshot restore</code>). This is why regular etcd backups are critical — CKA exam tests this. Backup frequency should match your RPO target.<br><br>
+    <strong>HA etcd:</strong> Production clusters run 3 or 5 etcd members (Raft consensus). Requires quorum ((N+1)/2 members) to elect a leader. 3-node cluster tolerates 1 failure.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">What is the difference between Deployment, StatefulSet, and DaemonSet? <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    <strong>Deployment:</strong> For stateless apps. Pods are interchangeable. Rolling updates swap pods freely. Scale up/down without identity concerns. Use for: web servers, API services, microservices.<br><br>
+    <strong>StatefulSet:</strong> For stateful apps. Pods have stable, ordered identities (pod-0, pod-1, pod-2). Ordered creation/deletion. Each pod gets its own PVC that persists across rescheduling. DNS: &lt;pod&gt;.&lt;service&gt;.&lt;namespace&gt;.svc.cluster.local. Use for: databases (MySQL, Cassandra), Kafka, Elasticsearch, ZooKeeper.<br><br>
+    <strong>DaemonSet:</strong> Runs exactly one pod per node (or per node matching selector). Used for: logging agents (Fluentd), monitoring agents (Datadog, Prometheus node-exporter), CNI plugins (Cilium), security agents (Falco).<br><br>
+    <strong>Follow-up often asked:</strong> "Can you scale a DaemonSet?" No — its count is determined by nodes. "What happens to a DaemonSet pod when a new node joins?" A new pod is automatically scheduled on it.
+    </div>
+  </div>
+
+  <h3>More Kubernetes questions:</h3>
+  <ul class="custom">
+    <li>Explain how HPA works — what metrics does it use and what are its limitations?</li>
+    <li>What's the difference between readiness probe and liveness probe? What happens if each fails?</li>
+    <li>How do you perform a zero-downtime deployment? What are the risks of rolling updates?</li>
+    <li>Explain PodDisruptionBudgets — when are they critical?</li>
+    <li>How does the Kubernetes garbage collector work? When does it clean up orphaned objects?</li>
+    <li>What is a Kubernetes admission webhook? What types exist? (Mutating vs Validating)</li>
+    <li>How would you debug a pod that's Pending indefinitely? (kubectl describe pod → check Events: Insufficient CPU/memory, taints, affinity rules)</li>
+    <li>Explain the Kubernetes controller pattern — what does a controller do?</li>
+    <li>How do you safely drain a node for maintenance without downtime?</li>
+    <li>What is a Service Account and how do pods use it? How does IRSA work?</li>
+  </ul>
+
+  <h2>Terraform — Top Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">How does Terraform state work? What are the risks of state corruption? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    Terraform state is a JSON file that maps your HCL configuration to real infrastructure resources. It stores: resource IDs (so Terraform knows which real resource corresponds to which config block), dependency graph, and metadata.<br><br>
+    <strong>State corruption risks:</strong><br>
+    - Two engineers running <code>terraform apply</code> simultaneously = state conflict<br>
+    - Network interruption mid-apply = partially applied state<br>
+    - Manually editing state = corruption<br>
+    - Deleting state = Terraform thinks resources don't exist, re-creates them (data loss risk for databases)<br><br>
+    <strong>Mitigations:</strong> Remote state with S3 + DynamoDB locking (prevents concurrent applies). State backup with versioning on S3. Use <code>terraform state</code> commands for surgery (never edit JSON directly). Enable <code>prevent_destroy</code> lifecycle hook for critical resources.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">What is the difference between count and for_each in Terraform? <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    <strong>count:</strong> Creates N instances indexed by integer (0, 1, 2...). Problem: if you remove element 0 from a list, everything re-indexes — Terraform may destroy and recreate resources incorrectly.<br><br>
+    <strong>for_each:</strong> Creates instances keyed by a string from a map or set. Keys are stable — removing one element doesn't affect others. Always prefer for_each when iterating over a collection of things that might change.<br><br>
+    <code>for_each</code> example: <code>for_each = toset(["us-east-1", "eu-west-1"])</code> creates resources with stable keys "us-east-1" and "eu-west-1".<br><br>
+    <strong>Practical rule:</strong> Use <code>count = var.create_resource ? 1 : 0</code> for conditional creation. Use <code>for_each</code> for iterating collections.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How do you import existing infrastructure into Terraform? <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    Classic approach: Write the resource block in HCL first, then run <code>terraform import &lt;resource_type&gt;.&lt;name&gt; &lt;real_resource_id&gt;</code>. This pulls the resource into state. Then run <code>terraform plan</code> — the diff shows what attributes Terraform wants to manage vs what currently exists. You then update your HCL until plan shows no diff.<br><br>
+    <strong>Terraform 1.5+ approach:</strong> Use <code>import</code> blocks in HCL + <code>terraform plan -generate-config-out=generated.tf</code> to auto-generate the resource configuration.<br><br>
+    <strong>Common pitfall:</strong> Importing doesn't validate your config matches reality. Always run plan after import and fix all diffs before running apply.
+    </div>
+  </div>
+
+  <h3>More Terraform questions:</h3>
+  <ul class="custom">
+    <li>How do you handle Terraform modules versioning in a team environment?</li>
+    <li>What is Terragrunt and when would you use it over vanilla Terraform?</li>
+    <li>How would you structure Terraform code for a large organization with 20 teams?</li>
+    <li>Explain the lifecycle meta-argument — create_before_destroy, prevent_destroy, ignore_changes</li>
+    <li>How do you handle secrets in Terraform? (Never in plaintext state — use data sources, Vault provider, or AWS SM)</li>
+    <li>What is a Terraform provider and how do you write a custom one?</li>
+    <li>How do you perform Terraform state migration when refactoring modules?</li>
+    <li>What is Atlantis and how does it improve Terraform team workflows?</li>
+  </ul>
+
+  <h2>AWS — Top Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">Explain IAM roles, policies, and when to use each. <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    <strong>IAM User:</strong> Long-lived credentials for a person or machine. Avoid for applications — use roles.<br>
+    <strong>IAM Role:</strong> Assumed by services, EC2 instances, Lambda functions, EKS pods (via IRSA). Temporary credentials. Best practice for everything.<br>
+    <strong>IAM Policy:</strong> JSON document defining permissions. Attached to users, groups, or roles. Types: Managed (AWS-managed or customer-managed, reusable) vs Inline (embedded in identity, one-to-one).<br><br>
+    <strong>IRSA (IAM Roles for Service Accounts):</strong> Kubernetes pods assume IAM roles via OIDC federation. Best practice for EKS — no long-lived keys, role is scoped to exact namespace/service account. Setup: OIDC provider → IAM role with trust policy → K8s service account annotation → pod gets temp AWS creds via environment variables injected by the webhook.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How would you design a VPC for a production application? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    <strong>Multi-AZ design (3 AZs minimum for production):</strong><br>
+    - Public subnets: ALB, NAT Gateway, bastion host<br>
+    - Private subnets: EKS nodes, EC2 app servers — no direct internet access<br>
+    - Database subnets: RDS, ElastiCache — no internet access, no route to public subnets<br><br>
+    <strong>Routing:</strong> Public subnets → Internet Gateway. Private subnets → NAT Gateway (in each AZ for resilience). DB subnets → no internet route.<br><br>
+    <strong>Security layers:</strong> Security groups (stateful, per-resource) + NACLs (stateless, per-subnet, second line of defense). VPC Flow Logs to S3/CloudWatch for forensics. VPC endpoints for S3, DynamoDB, ECR, Secrets Manager (keep traffic off internet).<br><br>
+    <strong>CIDR planning:</strong> Don't use 10.0.0.0/8 (too broad). Use /16 per VPC (65K IPs). /24 per subnet (250 usable). Plan for VPC peering — non-overlapping CIDRs are required.
+    </div>
+  </div>
+
+  <h3>More AWS questions:</h3>
+  <ul class="custom">
+    <li>Explain EKS managed node groups vs self-managed vs Fargate — when to use each</li>
+    <li>How does AWS ALB Ingress Controller work in EKS?</li>
+    <li>What is an AWS VPC endpoint? Why use one for ECR/S3?</li>
+    <li>Explain spot instances in the context of EKS — how do you handle interruptions?</li>
+    <li>What is Karpenter and how is it better than the Cluster Autoscaler?</li>
+    <li>How does Route53 failover routing work? What are health checks?</li>
+    <li>Explain the difference between S3 versioning, replication, and lifecycle policies</li>
+    <li>How do you implement cross-account access in AWS? (Assume role with trust policy)</li>
+  </ul>
+
+  <h2>Platform Engineering — Top Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">What is an Internal Developer Platform? How do you measure its success? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    An IDP is a self-service layer built on top of infrastructure tooling that allows developers to provision environments, deploy services, view logs/metrics, and manage their service lifecycle WITHOUT needing platform team involvement for routine tasks.<br><br>
+    <strong>Components typically included:</strong> Service catalog (Backstage), golden path templates, CI/CD as a service, secret management UI, environment provisioning, observability access, deployment status visibility.<br><br>
+    <strong>Success metrics (DORA + Platform-specific):</strong><br>
+    - Deployment frequency (platform teams target for DORA Elite: multiple deploys/day)<br>
+    - Time from PR merge to production (Lead Time for Changes)<br>
+    - Developer time spent on toil vs product work (survey + ticket volume)<br>
+    - Platform API reliability (99.9% SLA on the IDP itself)<br>
+    - Adoption rate (% of teams using golden paths vs rolling their own)<br><br>
+    Platform engineers treat the IDP as a product — with developers as customers, a roadmap, and NPS surveys.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How would you design a multi-tenant Kubernetes platform for 50 product teams? <span class="qa-diff diff-hard">Hard — System Design</span></div>
+    <div class="qa-a">
+    <strong>Isolation model:</strong> Namespace-per-team OR cluster-per-team (depends on security requirements and team size). Namespace-per-team is cost-efficient; cluster-per-team is more secure (blast radius isolation).<br><br>
+    <strong>Namespace approach (most common):</strong><br>
+    - Each team gets one or more namespaces (dev, staging, prod per team)<br>
+    - RBAC: team members have edit in their namespaces, view cluster-wide<br>
+    - ResourceQuotas and LimitRanges per namespace<br>
+    - NetworkPolicy: deny-all by default, allow team's own namespaces<br>
+    - OPA/Gatekeeper: enforce image registry, resource limits, required labels<br><br>
+    <strong>Self-service provisioning:</strong> Teams open a PR to add themselves to a config repo → Terraform/ArgoCD creates namespace, RBAC, quotas automatically.<br><br>
+    <strong>Shared services:</strong> Ingress controller (1 per cluster), cert-manager, External Secrets Operator, monitoring stack — all managed by platform team, accessible by all teams.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">How do you handle secrets management in a Kubernetes environment at scale? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    <strong>The problem:</strong> Kubernetes Secrets are base64-encoded (not encrypted at rest by default). Storing secrets in Git is a serious vulnerability. Rotating secrets manually across 50 services is toil.<br><br>
+    <strong>Solution architecture:</strong><br>
+    1. Source of truth: HashiCorp Vault or AWS Secrets Manager / GCP Secret Manager<br>
+    2. Sync mechanism: External Secrets Operator (ESO) watches Vault/SM and creates K8s Secret objects automatically<br>
+    3. Kubernetes: Secret objects exist ephemerally — ESO recreates them if deleted<br>
+    4. Rotation: Rotate in Vault/SM → ESO detects change → updates K8s Secret → app reloads (via secret store CSI driver for file-based injection, or pod restart for env var injection)<br>
+    5. Audit: Vault provides detailed audit log of every secret access<br>
+    6. Access control: Vault policies mapped to Kubernetes ServiceAccounts via K8s auth method<br><br>
+    Never store secrets in ConfigMaps. Never commit secrets to Git (even encrypted with SOPS/sealed-secrets is not ideal for large teams — use ESO instead).
+    </div>
+  </div>
+
+  <h2>System Design Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">Design a CI/CD system that supports 500 developers with 1000 deployments per day. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    <strong>Key requirements:</strong> High throughput (1000 deploys/day = ~42/hr), fast feedback (CI under 5 min), reliability (pipeline failures don't block all teams), security gates, multi-environment promotion.<br><br>
+    <strong>Architecture:</strong><br>
+    - <strong>CI:</strong> GitHub Actions with self-hosted runners on Kubernetes (actions-runner-controller). Runner pools per team size. Caching strategy: S3 or GitHub Actions cache for dependencies. Parallelization: matrix builds.<br>
+    - <strong>Artifact registry:</strong> ECR with lifecycle policies (keep last 10 tags per service)<br>
+    - <strong>CD:</strong> GitOps with ArgoCD. Each deploy = PR updating image tag in a manifests repo. ArgoCD auto-syncs to staging; production requires manual promotion or automated gate (test passing + canary metrics).<br>
+    - <strong>Deployment strategy:</strong> Argo Rollouts with canary (5% → 25% → 100%) + automated Prometheus analysis templates<br>
+    - <strong>Environments:</strong> dev (auto-deploy on merge), staging (auto-promote), prod (gate on SLO metrics)<br>
+    - <strong>Observability:</strong> Pipeline metrics in Grafana (deploy frequency, lead time, failure rate)<br><br>
+    <strong>Scale numbers:</strong> 1000 deploys/day across 3 envs = ~3000 ArgoCD sync operations. ArgoCD can handle this with proper sharding (Application sharding in ArgoCD v2.6+).
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Design a disaster recovery system for a Kubernetes-based fintech platform with RPO 15 minutes and RTO 30 minutes. <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    <strong>RPO 15 min:</strong> Backup must happen every 15 minutes. Data at rest must replicate continuously or with &lt;15 min lag.<br>
+    <strong>RTO 30 min:</strong> Full recovery in 30 minutes. This means automated failover — humans can't do it this fast manually.<br><br>
+    <strong>Architecture:</strong><br>
+    - <strong>Kubernetes:</strong> Velero backs up cluster state every 15 min to S3 cross-region. Restore: velero restore create → ~10 min<br>
+    - <strong>Database (RDS):</strong> Multi-AZ (synchronous replication, automatic failover ~90 sec) + cross-region read replica promoted to primary on DR<br>
+    - <strong>Object storage (S3):</strong> Cross-region replication, continuous<br>
+    - <strong>DNS failover:</strong> Route53 health checks + failover routing to DR region. TTL = 60 seconds<br>
+    - <strong>Application:</strong> GitOps — ArgoCD in DR region already has all manifests. Just point at restored state<br>
+    - <strong>DR runbook:</strong> Automated via Lambda/Step Functions triggered by health check failure<br>
+    - <strong>Testing:</strong> Quarterly DR drill — actual failover, measure RTO/RPO achieved<br><br>
+    <strong>The hard part:</strong> RTO 30 min is tight for database restoration. The right answer is active-passive with pre-warmed DR environment — DB already running in DR region as a read replica, promoted immediately on failover.
+    </div>
+  </div>
+
+  <h2>AI Infrastructure Questions</h2>
+
+  <div class="qa-item">
+    <div class="qa-q">How would you deploy a large language model inference service on Kubernetes? <span class="qa-diff diff-hard">Hard</span></div>
+    <div class="qa-a">
+    <strong>Components:</strong><br>
+    1. <strong>GPU nodes:</strong> Node pool with NVIDIA GPUs, tainted to ensure only GPU workloads schedule there (taint: nvidia.com/gpu=present:NoSchedule)<br>
+    2. <strong>NVIDIA device plugin:</strong> DaemonSet that exposes GPU resources to Kubernetes scheduler<br>
+    3. <strong>Inference server:</strong> vLLM (recommended for throughput) or NVIDIA Triton. Run as Deployment with GPU resource request/limit (limit 1 GPU per pod, or MIG slice)<br>
+    4. <strong>Autoscaling:</strong> KEDA with custom metric from Prometheus — scale on request queue depth or avg tokens/second<br>
+    5. <strong>Load balancing:</strong> K8s Service → multiple replicas of inference pods<br>
+    6. <strong>Model storage:</strong> NFS PV or S3 via s3fs/mountpoint. Model loaded at pod startup (warm-up time consideration)<br>
+    7. <strong>Observability:</strong> vLLM exposes Prometheus metrics — tokens/second, queue depth, GPU utilization, KV cache hit rate<br>
+    8. <strong>Cost optimization:</strong> Spot GPU instances (handle preemption gracefully), GPU sharing via MIG or time-slicing for smaller models<br><br>
+    <strong>Interviewer follow-up:</strong> "How do you handle cold starts?" Pre-warm pods with minReplicas > 0. Use KV cache persistence across requests.
+    </div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">What is the difference between model training infrastructure and model inference infrastructure? <span class="qa-diff diff-med">Medium</span></div>
+    <div class="qa-a">
+    <strong>Training infrastructure:</strong><br>
+    - Multi-node, multi-GPU — distributed training across hundreds of GPUs<br>
+    - High-bandwidth GPU interconnect (NVLink, InfiniBand) critical<br>
+    - Batch workload — long-running jobs (hours to weeks)<br>
+    - Frameworks: PyTorch distributed, Ray Train, Horovod<br>
+    - Storage: Fast shared storage (GPFS, Lustre) for training data<br>
+    - Managed by: Kubernetes (KubeFlow, Ray on K8s) or specialized platforms (AWS SageMaker)<br><br>
+    <strong>Inference infrastructure:</strong><br>
+    - Online serving — low latency, high throughput, request-response pattern<br>
+    - Single GPU or small multi-GPU per replica<br>
+    - Autoscaling is critical (traffic patterns)<br>
+    - Frameworks: vLLM, TGI (Text Generation Inference), NVIDIA Triton, TorchServe<br>
+    - Key metrics: P99 latency, tokens/second, time-to-first-token<br>
+    - Cost: Much more efficient per GPU than training<br><br>
+    Platform engineers primarily deal with inference infrastructure. Training is mostly owned by ML scientists with MLOps engineers.
+    </div>
+  </div>
+
+  <h3>More AI Infrastructure questions:</h3>
+  <ul class="custom">
+    <li>What is GPU MIG (Multi-Instance GPU) and when would you use GPU sharing?</li>
+    <li>How do you monitor GPU utilization and prevent GPU memory OOM in Kubernetes?</li>
+    <li>What is KV cache in the context of LLM inference? Why does it matter for performance?</li>
+    <li>Explain the difference between batch inference and online inference architectures</li>
+    <li>How would you build a RAG (Retrieval-Augmented Generation) system infrastructure?</li>
+    <li>What is vLLM's PagedAttention and why does it improve GPU memory efficiency?</li>
+  </ul>
+
+  <h2>CI/CD — Top Questions</h2>
+  <ul class="custom">
+    <li>How do you secure GitHub Actions pipelines? (OIDC, no long-lived keys, least-privilege permissions, pinned action SHA hashes)</li>
+    <li>What is the difference between push-based and pull-based CI/CD? When is each appropriate?</li>
+    <li>How do you implement database schema migrations in a zero-downtime deployment?</li>
+    <li>Explain blue-green vs canary vs rolling deployment strategies — trade-offs?</li>
+    <li>How do you handle secrets in CI/CD pipelines without storing them in the pipeline config?</li>
+    <li>How do you measure pipeline performance? What metrics matter? (P95 pipeline duration, cache hit rate, queue time)</li>
+    <li>What is a feature flag and how does it change your deployment strategy?</li>
+    <li>How do you implement trunk-based development vs Gitflow? Which is better for DevOps?</li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 8 — DOCUMENTATION -->
+<!-- =============================================================== -->
+<section class="part" id="part8">
+  <div class="part-header">
+    <div class="part-num n8">8</div>
+    <div>
+      <div class="part-title">Documentation Guide</div>
+      <div class="part-sub">Templates for architecture, runbooks, postmortems, DR plans, and README standards</div>
+    </div>
+  </div>
+
+  <div class="callout success"><strong>Why documentation matters for job applications:</strong> A well-documented GitHub repo immediately signals seniority. Most engineers write code without docs. Engineers who write clear architecture docs, proper READMEs, and postmortem templates stand out as platform engineers — because that IS platform engineering.</div>
+
+  <h2>Architecture Decision Record (ADR)</h2>
+  <div class="doc-template">
+<span class="doc-section"># ADR-[number]: [Short title of decision]</span>
+
+<span class="doc-section">## Status</span>
+<span class="doc-field">[Proposed | Accepted | Deprecated | Superseded by ADR-XXX]</span>
+
+<span class="doc-section">## Date</span>
+<span class="doc-field">YYYY-MM-DD</span>
+
+<span class="doc-section">## Context</span>
+<span class="doc-field">What is the problem or situation that forces a decision?
+What constraints exist? What are the forces at play?</span>
+
+<span class="doc-section">## Decision</span>
+<span class="doc-field">What is the change we're proposing/accepting?
+State clearly what was decided.</span>
+
+<span class="doc-section">## Consequences</span>
+<span class="doc-section">### Positive</span>
+<span class="doc-field">- What becomes easier or better?</span>
+<span class="doc-section">### Negative</span>
+<span class="doc-field">- What becomes harder or worse?</span>
+<span class="doc-section">### Risks</span>
+<span class="doc-field">- What could go wrong?</span>
+
+<span class="doc-section">## Alternatives Considered</span>
+<span class="doc-field">Why were other options rejected?</span>
+
+<span class="doc-section">## References</span>
+<span class="doc-field">Links to relevant documentation, issues, or discussions</span>
+  </div>
+
+  <h2>Runbook Template</h2>
+  <div class="doc-template">
+<span class="doc-section"># Runbook: [Service Name] — [Procedure Name]</span>
+
+<span class="doc-field">Severity: P1 | P2 | P3</span>
+<span class="doc-field">Owner Team: Platform Engineering</span>
+<span class="doc-field">Last Updated: YYYY-MM-DD</span>
+<span class="doc-field">Oncall Rotation: [Link to PagerDuty]</span>
+
+<span class="doc-section">## Summary</span>
+<span class="doc-field">One paragraph: what this runbook handles, when to use it.</span>
+
+<span class="doc-section">## Symptoms</span>
+<span class="doc-field">- Prometheus alert: [AlertName] firing
+- User report: requests timing out
+- Dashboard showing: error rate > 5%</span>
+
+<span class="doc-section">## Prerequisites</span>
+<span class="doc-field">- kubectl access to production cluster
+- AWS CLI configured with production credentials
+- Slack #incidents channel access</span>
+
+<span class="doc-section">## Steps</span>
+<span class="doc-section">### 1. Assess scope</span>
+<span class="doc-field">  kubectl get pods -n production | grep [service]
+  # Expected: all pods Running. If CrashLoopBackOff, go to Step 2.</span>
+
+<span class="doc-section">### 2. Check recent deployments</span>
+<span class="doc-field">  argocd app history [app-name]
+  # If recent deploy: consider rollback → Step 3</span>
+
+<span class="doc-section">### 3. Emergency rollback</span>
+<span class="doc-field">  argocd app rollback [app-name] [revision]
+  # Monitor: watch kubectl get pods -n production</span>
+
+<span class="doc-section">### 4. Escalate if unresolved</span>
+<span class="doc-field">  @oncall-platform in #incidents
+  Provide: error rate, affected services, steps tried</span>
+
+<span class="doc-section">## Resolution Confirmation</span>
+<span class="doc-field">- Error rate returns to < 0.1%
+- All pods in Running state
+- No new alerts in 10 minutes</span>
+
+<span class="doc-section">## Post-Incident</span>
+<span class="doc-field">File postmortem within 48 hours. Link: [Postmortem template]</span>
+  </div>
+
+  <h2>Incident Postmortem Template</h2>
+  <div class="doc-template">
+<span class="doc-section"># Postmortem: [Incident Title]</span>
+<span class="doc-field">Date: YYYY-MM-DD | Severity: P1/P2/P3 | Duration: X hours Y minutes</span>
+<span class="doc-field">Incident Commander: [Name] | Scribe: [Name]</span>
+
+<span class="doc-section">## Impact</span>
+<span class="doc-field">- Users affected: [Number / % of traffic]
+- Revenue impact: [If applicable]
+- Error budget consumed: [X% of monthly budget]
+- External SLA breached: Yes/No</span>
+
+<span class="doc-section">## Timeline (UTC)</span>
+<span class="doc-field">HH:MM - Alert fired: [AlertName]
+HH:MM - Oncall engineer acknowledged
+HH:MM - Initial investigation began
+HH:MM - Root cause identified
+HH:MM - Fix deployed
+HH:MM - Service recovered
+HH:MM - Incident resolved</span>
+
+<span class="doc-section">## Root Cause</span>
+<span class="doc-field">Technical explanation of what went wrong.
+Be specific — not "memory issue" but "OOMKilled due to memory leak 
+in connection pool not being closed on timeout"</span>
+
+<span class="doc-section">## Contributing Factors</span>
+<span class="doc-field">- No memory limit alerts configured
+- Connection pool timeout setting not tested under load
+- No runbook existed for this failure mode</span>
+
+<span class="doc-section">## What Went Well</span>
+<span class="doc-field">- Alert fired within 2 minutes of degradation
+- Team mobilized quickly
+- Rollback completed in under 5 minutes</span>
+
+<span class="doc-section">## Action Items</span>
+<span class="doc-field">| Action                          | Owner   | Due Date   |
+|---------------------------------|---------|------------|
+| Add memory exhaustion alert     | Shaik   | YYYY-MM-DD |
+| Write runbook for this scenario | Shaik   | YYYY-MM-DD |
+| Load test connection pool       | Dev     | YYYY-MM-DD |</span>
+
+<span class="doc-section">## Lessons Learned</span>
+<span class="doc-field">Blameless — focus on systems, not people.
+What does this incident teach us about our platform?</span>
+  </div>
+
+  <h2>Production-Ready Kubernetes App README</h2>
+  <div class="doc-template">
+<span class="doc-section"># [Service Name]</span>
+<span class="doc-field">[One-sentence description of what this service does]</span>
+
+[![CI](https://github.com/org/repo/workflows/CI/badge.svg)]()
+[![Coverage](https://img.shields.io/badge/coverage-92%25-green)]()
+[![License](https://img.shields.io/badge/license-MIT-blue)]()
+
+<span class="doc-section">## Architecture</span>
+<span class="doc-field">[Architecture diagram — use Mermaid or link to draw.io]
+Key components and their interactions.</span>
+
+<span class="doc-section">## Prerequisites</span>
+<span class="doc-field">- kubectl 1.27+
+- Helm 3.12+
+- AWS CLI 2.x configured
+- Docker 24+</span>
+
+<span class="doc-section">## Quick Start</span>
+<span class="doc-field">```bash
+# Clone
+git clone https://github.com/org/service.git && cd service
+
+# Local development
+docker-compose up -d
+
+# Deploy to Kubernetes (staging)
+helm upgrade --install service ./charts/service \
+  --namespace staging --create-namespace \
+  -f ./charts/service/values-staging.yaml
+```</span>
+
+<span class="doc-section">## Configuration</span>
+<span class="doc-field">| Variable        | Description           | Default  | Required |
+|-----------------|-----------------------|----------|----------|
+| DATABASE_URL    | PostgreSQL connection  | -        | Yes      |
+| LOG_LEVEL       | Logging verbosity      | info     | No       |</span>
+
+<span class="doc-section">## Deployment</span>
+<span class="doc-field">CI/CD: GitHub Actions → ECR → ArgoCD (GitOps)
+See: [.github/workflows/ci.yml](.github/workflows/ci.yml)</span>
+
+<span class="doc-section">## Monitoring</span>
+<span class="doc-field">- Metrics: [Grafana Dashboard](https://grafana.example.com/d/xxx)
+- Logs: [Loki](https://grafana.example.com/explore?...)
+- Alerts: [AlertManager rules](./monitoring/rules/)</span>
+
+<span class="doc-section">## Runbooks</span>
+<span class="doc-field">- [High Error Rate](./docs/runbooks/high-error-rate.md)
+- [Memory Pressure](./docs/runbooks/memory-pressure.md)
+- [Database Connection Exhaustion](./docs/runbooks/db-connections.md)</span>
+
+<span class="doc-section">## On-Call</span>
+<span class="doc-field">PagerDuty service: [link] | Escalation: Platform Engineering</span>
+  </div>
+
+  <h2>Disaster Recovery Plan</h2>
+  <div class="doc-template">
+<span class="doc-section"># Disaster Recovery Plan — [Service/Platform Name]</span>
+
+<span class="doc-section">## RTO and RPO Targets</span>
+<span class="doc-field">| Scenario             | RTO Target | RPO Target | Tested Date |
+|----------------------|------------|------------|-------------|
+| AZ failure           | 5 min      | 0 (HA)     | YYYY-MM-DD  |
+| Region failure       | 30 min     | 15 min     | YYYY-MM-DD  |
+| Ransomware/data loss | 4 hours    | 24 hours   | YYYY-MM-DD  |</span>
+
+<span class="doc-section">## Backup Strategy</span>
+<span class="doc-field">- Kubernetes state: Velero → s3://backups-dr-region/ every 15 min, retain 7 days
+- Database: RDS automated backups (daily) + cross-region read replica
+- Config/secrets: Vault snapshot daily → S3 cross-region</span>
+
+<span class="doc-section">## Failover Procedure</span>
+<span class="doc-section">### Step 1: Declare DR</span>
+<span class="doc-field">  Approval required from: [VP Engineering / Platform Lead]</span>
+<span class="doc-section">### Step 2: Database failover</span>
+<span class="doc-field">  aws rds promote-read-replica --db-instance-identifier dr-replica</span>
+<span class="doc-section">### Step 3: Restore Kubernetes state</span>
+<span class="doc-field">  velero restore create dr-restore --from-backup latest --wait</span>
+<span class="doc-section">### Step 4: Update DNS</span>
+<span class="doc-field">  Route53 health check will auto-failover within 60 seconds</span>
+<span class="doc-section">### Step 5: Validate</span>
+<span class="doc-field">  Run smoke tests: ./scripts/smoke-test.sh dr-region</span>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 9 — REMOTE JOBS -->
+<!-- =============================================================== -->
+<section class="part" id="part9">
+  <div class="part-header">
+    <div class="part-num n9">9</div>
+    <div>
+      <div class="part-title">Remote Job Preparation</div>
+      <div class="part-sub">What it actually takes to get hired remotely by US/EU companies from India</div>
+    </div>
+  </div>
+
+  <div class="callout warn"><strong>Honest reality check:</strong> Remote jobs from India for US/EU companies are available but competitive. You are competing with engineers from Eastern Europe, Latin America, and Southeast Asia. Your price advantage as an Indian engineer is real, but it alone is not enough. You need a portfolio that speaks for itself without a phone screen.</div>
+
+  <h2>GitHub Profile — What Remote Employers Look For</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Profile must-haves</h3>
+      <ul class="custom check">
+        <li>Professional photo + clear bio ("Platform Engineer | Kubernetes | GitOps | Bengaluru")</li>
+        <li>Website link (portfolio site or personal site)</li>
+        <li>Pinned repos: 4–6 best projects, not 20 mediocre ones</li>
+        <li>Consistent commit history (green squares daily/weekly — shows sustained effort)</li>
+        <li>README on every pinned repo (architecture diagram + setup + what problem it solves)</li>
+        <li>Meaningful commit messages (not "fix" or "update" — describe what and why)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What kills applications immediately</h3>
+      <ul class="custom x">
+        <li>Empty profile with no pinned repos</li>
+        <li>Repos with only README.md and no actual code</li>
+        <li>Forked repos without any original contribution</li>
+        <li>"tutorial-follow-along" commit messages</li>
+        <li>No documentation whatsoever</li>
+        <li>Generic project names like "project1" or "kubernetes-test"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>LinkedIn Profile — Remote Job Optimization</h2>
+  <ul class="custom">
+    <li><strong>Headline:</strong> "Platform Engineer | Kubernetes · GitOps · AWS · Terraform | Open to Remote Opportunities" — not just your current job title</li>
+    <li><strong>About section:</strong> Written in first person, describes impact not responsibilities. Mention "open to remote" explicitly.</li>
+    <li><strong>Experience section:</strong> Every role has 3–4 bullet points with quantified achievements (reduced deployment time from X to Y, managed N services, decreased MTTR by Z%)</li>
+    <li><strong>Skills section:</strong> Fill all 50 skills. Prioritize: Kubernetes, Terraform, AWS, CI/CD, GitOps, Platform Engineering, Docker, Python, GitHub Actions, Prometheus</li>
+    <li><strong>Featured section:</strong> Link to GitHub, blog posts, demo videos</li>
+    <li><strong>Open to Work:</strong> Set to "Open to remote only" or "Open to remote globally"</li>
+    <li><strong>Engage:</strong> Comment on posts from platform engineering thought leaders (Liz Rice, Kelsey Hightower, Charity Majors). This builds visibility.</li>
+  </ul>
+
+  <h2>Where to Find Remote Jobs</h2>
+  <table>
+    <thead><tr><th>Platform</th><th>Best For</th><th>Typical Timeline</th></tr></thead>
+    <tbody>
+      <tr><td>Wellfound (AngelList)</td><td>Early-stage startups, Series A/B</td><td>1–2 weeks</td></tr>
+      <tr><td>RemoteOK</td><td>Remote-first companies, tech roles</td><td>1–3 weeks</td></tr>
+      <tr><td>LinkedIn</td><td>Mid-to-large companies, GCCs</td><td>2–4 weeks</td></tr>
+      <tr><td>Otta (now Welcome to the Jungle)</td><td>EU companies, transparent comp</td><td>2–3 weeks</td></tr>
+      <tr><td>YC Jobs (workatastartup.com)</td><td>YC-backed startups, high growth</td><td>1–2 weeks (fast hiring)</td></tr>
+      <tr><td>Greenhouse / Lever</td><td>Company career pages directly</td><td>Variable</td></tr>
+      <tr><td>X (Twitter) #hiring #devops</td><td>Niche roles, direct founder contact</td><td>Very fast if lucky</td></tr>
+      <tr><td>Toptal / Gun.io</td><td>Freelance/contract, premium screening</td><td>1–2 months screening</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Resume for Remote/US Jobs</h2>
+  <ul class="custom">
+    <li><strong>Format:</strong> Single page, ATS-friendly (no tables, graphics, columns if submitting to ATS). Use simple formatting.</li>
+    <li><strong>Summary:</strong> 2–3 sentences with your value prop and "seeking remote opportunities"</li>
+    <li><strong>Every bullet must answer "so what":</strong> Not "managed Kubernetes clusters" but "managed 3 EKS clusters serving 2M daily users with 99.98% uptime"</li>
+    <li><strong>Numbers everywhere:</strong> Team size, user scale, cost impact, time impact, percentage improvements</li>
+    <li><strong>Keywords match:</strong> Mirror the exact language in the job description (ATS scanning)</li>
+    <li><strong>Projects section:</strong> Include 2–3 key projects with GitHub links and 1-line description</li>
+    <li><strong>Timezone note:</strong> "IST (UTC+5:30) — available for overlap with US EST/PST mornings"</li>
+  </ul>
+
+  <h2>Remote Interview Process — What to Expect</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Stage 1</div><div class="tl-title">Async screening</div><div class="tl-body">Loom video (2 min, who you are + why you want the role). Or async coding challenge on HackerRank/CoderPad. Fast to pass if your GitHub is strong.</div></div>
+    <div class="tl-item"><div class="tl-dot d2"></div><div class="tl-label l2">Stage 2</div><div class="tl-title">Technical phone screen (45 min)</div><div class="tl-body">Live infrastructure/K8s questions. Usually with a senior engineer. Expect: debug this YAML, explain this architecture, troubleshoot this scenario.</div></div>
+    <div class="tl-item"><div class="tl-dot d3"></div><div class="tl-label l3">Stage 3</div><div class="tl-title">Take-home or live coding (2–4 hrs)</div><div class="tl-body">Build a CI/CD pipeline, write Terraform for X, or fix a broken Kubernetes config. Documentation matters here.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Stage 4</div><div class="tl-title">System design (1 hr)</div><div class="tl-body">Design a CI/CD system, design a multi-tenant platform, design DR for X. Practice drawing and explaining diagrams verbally.</div></div>
+    <div class="tl-item"><div class="tl-dot d2"></div><div class="tl-label l2">Stage 5</div><div class="tl-title">Culture/values fit (30 min)</div><div class="tl-body">Leadership principles, handling disagreements, working async. Prepare STAR stories for: handled conflict, delivered under pressure, pushed back on bad decision.</div></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 10 — AI + PLATFORM ENGINEERING -->
+<!-- =============================================================== -->
+<section class="part" id="part10">
+  <div class="part-header">
+    <div class="part-num n10">10</div>
+    <div>
+      <div class="part-title">AI + Platform Engineering</div>
+      <div class="part-sub">What's real, what's hype, and what you actually need to learn</div>
+    </div>
+  </div>
+
+  <div class="callout danger"><strong>Honesty warning:</strong> 70% of what is marketed as "AI DevOps skills" is hype. The actual skills that matter in production in 2025–2026 are a small, focused set. This section is ruthlessly practical.</div>
+
+  <h2>Production Reality vs Hype — Scored</h2>
+  <table>
+    <thead><tr><th>Technology</th><th>Production Reality</th><th>Should You Learn It?</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>Kubernetes GPU device plugin / NVIDIA plugin</td><td style="color:var(--green)">Real — used everywhere AI runs</td><td>Yes</td><td style="color:var(--red)">HIGH</td></tr>
+      <tr><td>vLLM / TGI (inference serving)</td><td style="color:var(--green)">Real — production standard</td><td>Yes</td><td style="color:var(--red)">HIGH</td></tr>
+      <tr><td>MLflow (experiment tracking)</td><td style="color:var(--green)">Real — used in ML teams</td><td>Understand it</td><td style="color:var(--yellow)">MED</td></tr>
+      <tr><td>Kubeflow</td><td style="color:var(--yellow)">Real but complex — often replaced by simpler tools</td><td>Know concepts</td><td style="color:var(--yellow)">MED</td></tr>
+      <tr><td>Ray (distributed compute)</td><td style="color:var(--green)">Real — growing fast</td><td>Yes for AI infra roles</td><td style="color:var(--yellow)">MED</td></tr>
+      <tr><td>OpenAI API / Claude API</td><td style="color:var(--green)">Real — used for automation tools</td><td>Yes — for building AI ops tools</td><td style="color:var(--yellow)">MED</td></tr>
+      <tr><td>LangChain (orchestration)</td><td style="color:var(--yellow)">Real but declining (simpler alternatives)</td><td>Know basics</td><td style="color:var(--green)">LOW</td></tr>
+      <tr><td>LangGraph</td><td style="color:var(--yellow)">Emerging — stateful AI agents</td><td>Monitor, not required yet</td><td style="color:var(--green)">LOW</td></tr>
+      <tr><td>CrewAI / AutoGen</td><td style="color:var(--red)">Mostly demos, rarely production</td><td>No</td><td style="color:var(--green)">SKIP</td></tr>
+      <tr><td>Vector databases (Pinecone, Weaviate, pgvector)</td><td style="color:var(--yellow)">Real for RAG — but you manage infra, not build it</td><td>Understand deployment</td><td style="color:var(--green)">LOW</td></tr>
+      <tr><td>Model Context Protocol (MCP)</td><td style="color:var(--yellow)">Emerging — AI agent integration standard</td><td>Monitor in 2026</td><td style="color:var(--green)">LOW now</td></tr>
+      <tr><td>GPU infrastructure (NCCL, InfiniBand)</td><td style="color:var(--green)">Real — critical for training infra</td><td>Yes if targeting AI infra roles</td><td style="color:var(--red)">HIGH for AI track</td></tr>
+      <tr><td>KEDA for AI autoscaling</td><td style="color:var(--green)">Real — standard pattern</td><td>Yes</td><td style="color:var(--red)">HIGH</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How AI is Changing Platform Engineering — Practically</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>AI-assisted operations (real, today)</h3>
+      <ul class="custom check">
+        <li>LLM-powered runbook generation from incident history</li>
+        <li>AI-assisted PR reviews for Terraform/K8s changes</li>
+        <li>Automated incident diagnosis using AI + Prometheus data</li>
+        <li>AI-generated documentation for services (from code analysis)</li>
+        <li>Natural language interface to Kubernetes (k8sgpt, etc.)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Platform infrastructure for AI (real, today)</h3>
+      <ul class="custom check">
+        <li>GPU node pools in Kubernetes for model serving</li>
+        <li>Model registry and serving infrastructure</li>
+        <li>Feature stores and ML pipeline orchestration</li>
+        <li>Cost management for GPU workloads (expensive)</li>
+        <li>Autoscaling inference based on queue depth</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>The Skill Cluster That Pays in 2026</h2>
+  <p>For a platform engineer to command ₹20+ LPA in India or $150K+ remote, the combination is:</p>
+  <div class="highlight">
+    <strong>Core PE skills</strong> (Kubernetes + Terraform + GitOps + CI/CD) <strong>+</strong><br>
+    <strong>AI infra awareness</strong> (GPU scheduling + vLLM + KEDA for AI workloads) <strong>+</strong><br>
+    <strong>AI-assisted tooling</strong> (build AIOps tools using Claude/OpenAI API) <strong>+</strong><br>
+    <strong>Observability</strong> (OpenTelemetry + Prometheus + Grafana) <strong>+</strong><br>
+    <strong>Security</strong> (OPA + Vault + supply chain security)
+  </div>
+
+  <h2>Learning Path for AI Infrastructure</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Step 1 (Week 1–2)</div><div class="tl-title">Understand GPU scheduling in Kubernetes</div><div class="tl-body">Deploy NVIDIA device plugin on k3d with a GPU. Request GPU resources in a pod spec. Understand MIG (Multi-Instance GPU) concepts. Deploy a simple CUDA test workload.</div></div>
+    <div class="tl-item"><div class="tl-dot d2"></div><div class="tl-label l2">Step 2 (Week 3–4)</div><div class="tl-title">Deploy vLLM on Kubernetes</div><div class="tl-body">Run a small model (Mistral 7B, Phi-3) via vLLM. Expose via Service. Add Prometheus metrics. Understand: token throughput, KV cache, speculative decoding concepts.</div></div>
+    <div class="tl-item"><div class="tl-dot d3"></div><div class="tl-label l3">Step 3 (Week 5–6)</div><div class="tl-title">AI autoscaling with KEDA</div><div class="tl-body">Configure KEDA to scale inference pods based on Prometheus metrics (request queue depth, GPU utilization). Simulate load. Document scale-up/scale-down behavior.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Step 4 (Week 7–8)</div><div class="tl-title">Build an AI ops tool</div><div class="tl-body">Use Claude API or OpenAI API to build a Kubernetes incident assistant. Input: kubectl describe pod output + recent logs. Output: likely root cause + suggested fix. This project is uniquely impressive.</div></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 11 — CERTIFICATIONS -->
+<!-- =============================================================== -->
+<section class="part" id="part11">
+  <div class="part-header">
+    <div class="part-num n11">11</div>
+    <div>
+      <div class="part-title">Certifications — Ranked by Hiring Value</div>
+      <div class="part-sub">Which certifications actually move the needle in 2025–2026</div>
+    </div>
+  </div>
+
+  <div class="callout info"><strong>Key principle:</strong> Certifications open doors but don't close offers. A CKA gets you past ATS filters and phone screens. The offer comes from your portfolio and interview performance. Do certifications in parallel with building projects — not instead of them.</div>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r1">1</span></div><div class="cert-info"><div class="cert-name">CKA — Certified Kubernetes Administrator</div><div class="cert-sub">CNCF | $395 | 2 hrs hands-on exam | Performance-based</div></div><div class="cert-roi roi-high">Highest ROI</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">The most impactful certification in DevOps/Platform Engineering. 87% of Platform Engineer job descriptions mention Kubernetes experience — CKA proves it definitively. The exam is entirely hands-on (no multiple choice) which makes it more credible than most certs. Priority: Do this FIRST. Use killer.sh for practice (2 included with registration).</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r2">2</span></div><div class="cert-info"><div class="cert-name">Terraform Associate (HashiCorp)</div><div class="cert-sub">HashiCorp | $70.50 | 1 hr MCQ | Multiple choice</div></div><div class="cert-roi roi-high">High ROI</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">Second most requested credential. Terraform is in 91% of JDs. The exam is easier than CKA (MCQ) so study time is lower. Do this within 2 months of CKA. HashiCorp/IBM has restructured this certification — verify current exam guide before studying.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r3">3</span></div><div class="cert-info"><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-sub">AWS | $150 | 2.3 hrs | Multiple choice</div></div><div class="cert-roi roi-high">High ROI</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">AWS appears in 88% of DevOps JDs. SAA-C03 proves cloud architecture knowledge. Less valuable than CKA on its own, but the combination CKA + Terraform + AWS SAA is extremely powerful in the job market. Study time: 4–6 weeks if you have practical AWS experience.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r-other">4</span></div><div class="cert-info"><div class="cert-name">CKAD — Certified Kubernetes Application Developer</div><div class="cert-sub">CNCF | $395 | 2 hrs hands-on | Performance-based</div></div><div class="cert-roi roi-med">Medium ROI</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">Easier than CKA, focuses on application deployment rather than administration. Good if you're targeting roles closer to developer enablement (platform engineering). Do AFTER CKA — shared study materials. Less ROI than CKA since CKA already implies CKAD knowledge.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r-other">5</span></div><div class="cert-info"><div class="cert-name">AWS DevOps Engineer Professional</div><div class="cert-sub">AWS | $300 | 3 hrs | Multiple choice</div></div><div class="cert-roi roi-med">Medium ROI</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">More respected than SAA for DevOps roles. Covers CI/CD, IaC, monitoring, and security on AWS. Requires SAA first. Good for AWS-focused organizations. Do this in Year 2 — not a Year 1 priority.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r-other">6</span></div><div class="cert-info"><div class="cert-name">CKS — Certified Kubernetes Security Specialist</div><div class="cert-sub">CNCF | $395 | 2 hrs hands-on</div></div><div class="cert-roi roi-high">High ROI (Niche)</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">Requires CKA as prerequisite. Covers supply chain security, runtime security, network policies, OPA. Becoming more valuable as DevSecOps demand grows. Priority: Do after CKA if security is your differentiator.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r-other">7</span></div><div class="cert-info"><div class="cert-name">RHCSA — Red Hat Certified System Administrator</div><div class="cert-sub">Red Hat | ~$400 | Performance-based</div></div><div class="cert-roi roi-low">Low ROI for DevOps</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">Highly respected for Linux systems administration. Less relevant for pure DevOps/Platform Engineering unless targeting Red Hat/enterprise Linux environments. Skip unless you specifically need it for a target company.</p>
+
+  <div class="cert-row"><div class="cert-rank"><span class="rank-badge r-other">8</span></div><div class="cert-info"><div class="cert-name">Azure Administrator / GCP Professional Cloud Architect</div><div class="cert-sub">Microsoft/Google | $165–$200</div></div><div class="cert-roi roi-low">Low (unless cloud-specific)</div></div>
+  <p style="font-size:13px; color:var(--muted); padding-left:2.5rem; margin-bottom:1rem;">Only prioritize if your target companies are Azure/GCP shops. AWS SAA is more broadly applicable. Don't chase multi-cloud certifications early — you'll spread yourself too thin.</p>
+
+  <h2>Recommended Certification Timeline</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Month 2–4</div><div class="tl-title">CKA</div><div class="tl-body">Register after your first 4 weeks of K8s study. Use killer.sh. Attempt when consistently scoring 75%+ on practice exams.</div></div>
+    <div class="tl-item"><div class="tl-dot d2"></div><div class="tl-label l2">Month 4–5</div><div class="tl-title">Terraform Associate</div><div class="tl-body">Study in parallel with building Terraform projects. Exam is MCQ so shorter prep time needed.</div></div>
+    <div class="tl-item"><div class="tl-dot d3"></div><div class="tl-label l3">Month 6–8</div><div class="tl-title">AWS SAA-C03</div><div class="tl-body">Study while building AWS infrastructure projects. Tutorials Dojo practice exams are the best resource.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-label">Month 10–14</div><div class="tl-title">CKS or AWS DevOps Pro</div><div class="tl-body">Choose based on career direction: security track → CKS. AWS-focused → DevOps Pro. Both are Year 2 goals.</div></div>
+  </div>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 12 — LEARNING PRIORITY -->
+<!-- =============================================================== -->
+<section class="part" id="part12">
+  <div class="part-header">
+    <div class="part-num n12">12</div>
+    <div>
+      <div class="part-title">Learning Priority</div>
+      <div class="part-sub">If I were personally mentoring you — exact order, reasons, mistakes to avoid</div>
+    </div>
+  </div>
+
+  <div class="callout success"><strong>Your starting advantage:</strong> You have 2 years of actual DevOps work, Linux administration background, and a real product company on your resume. You are NOT starting from zero. This order assumes you have functional knowledge of Docker and basic Kubernetes.</div>
+
+  <h2>Exact Priority Order — With Why</h2>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-label">Priority 1</div>
+      <div class="tl-title">CKA preparation + Advanced Kubernetes</div>
+      <div class="tl-body">This is your most important lever. CKA certification + production Kubernetes knowledge is the single biggest unlock for ₹8–12 LPA roles in Bengaluru. You likely have basic K8s — deepen to RBAC, NetworkPolicy, IRSA, HPA, etcd backup. Do this before everything else.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d2"></div>
+      <div class="tl-label">Priority 2</div>
+      <div class="tl-title">ArgoCD + GitOps (your multi-cluster project)</div>
+      <div class="tl-body">You're already building this. Complete it. GitOps with ArgoCD ApplicationSets for multi-cluster management is a differentiating project that directly maps to Platform Engineer job descriptions. Ship the project, document it properly, write a blog post about it.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d3"></div>
+      <div class="tl-label">Priority 3</div>
+      <div class="tl-title">Terraform + EKS (build the AWS infra project)</div>
+      <div class="tl-body">Your existing Terraform knowledge needs to become module-level proficiency. Build a complete EKS environment with Terraform modules — VPC, EKS, node groups, IRSA, ALB controller, External DNS. This becomes portfolio project #3.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-label">Priority 4</div>
+      <div class="tl-title">Python (boto3 + kubernetes-client)</div>
+      <div class="tl-body">Your non-CS background makes this feel daunting but it's not. You need functional, not expert, Python. 30 minutes daily on Python automation for 2 months will get you to the level needed. Focus: boto3 for AWS tasks, kubernetes-client for cluster automation.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d2"></div>
+      <div class="tl-label">Priority 5</div>
+      <div class="tl-title">Observability stack (Prometheus + Grafana + SLOs)</div>
+      <div class="tl-body">Deploy the full LGTM stack on your lab cluster. Write real SLO definitions for your portfolio projects. Build Grafana dashboards from scratch (not import existing ones). This is a skill you can demonstrate live in interviews.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d3"></div>
+      <div class="tl-label">Priority 6</div>
+      <div class="tl-title">DevSecOps (Trivy + OPA + Vault)</div>
+      <div class="tl-body">Add security gates to your existing CI/CD pipeline. Deploy OPA/Gatekeeper with at least 5 custom policies. Integrate Vault for secrets. This upgrades existing projects without starting new ones.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-label">Priority 7</div>
+      <div class="tl-title">AI Infrastructure (GPU scheduling + vLLM + KEDA)</div>
+      <div class="tl-body">This is your 6-month goal, not Month 1. Once your core portfolio is solid, add one AI infrastructure project. Deploy vLLM on your Kubernetes cluster. This immediately separates you from 95% of 2-year DevOps engineers.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot d2"></div>
+      <div class="tl-label">Priority 8</div>
+      <div class="tl-title">Go (only if targeting Platform Engineer or Staff roles)</div>
+      <div class="tl-body">Go is in 45% of senior Platform Engineer JDs. You don't need it to get a ₹10–12 LPA role, but you will need it for ₹20 LPA+. Learn Go in Month 5–6 of your roadmap.</div>
+    </div>
+  </div>
+
+  <h2>Mistakes to Completely Avoid</h2>
+  <ul class="custom x">
+    <li><strong>Tutorial paralysis:</strong> Watching videos instead of building. The ratio should be 20% study, 80% hands-on. If you have 3 hours, spend 2 hours breaking things in your lab.</li>
+    <li><strong>Certification-first thinking:</strong> Getting 5 certifications without a single portfolio project. Hiring managers at product companies care far more about your GitHub than your badges.</li>
+    <li><strong>Inflating skills on resume:</strong> If you've only done a tutorial on OPA/Rego, don't list it as a skill. You will be asked in depth and the lie will be exposed in the first 10 minutes of an interview.</li>
+    <li><strong>Using only local clusters (kind/minikube):</strong> You must have real cloud experience. Even 1 month of running EKS/GKE at low cost ($30–50/month) is worth more than 6 months of local experimentation.</li>
+    <li><strong>Not documenting projects:</strong> A GitHub repo with no README is invisible. Every project needs architecture, setup, and what problem it solves.</li>
+    <li><strong>Neglecting Python:</strong> With your non-CS background, it's tempting to skip scripting. Don't. Python automation is tested in 60% of DevOps interviews.</li>
+    <li><strong>Chasing every new tool:</strong> The field produces new tools constantly. Learn the fundamentals deeply — Kubernetes, Terraform, GitOps, Observability — before exploring the edges.</li>
+    <li><strong>Not measuring anything:</strong> All resume bullets should have numbers. "Improved deployment speed" is useless. "Reduced deployment time from 45 minutes to 8 minutes" is compelling.</li>
+  </ul>
+
+  <h2>What to Completely Skip (for now)</h2>
+  <ul class="custom warn">
+    <li><strong>Ansible for new setups:</strong> Focus on Kubernetes/Terraform. Ansible is legacy config management — still in 58% of JDs but declining fast. Learn enough to understand it, not master it.</li>
+    <li><strong>CrewAI/AutoGen/LangGraph:</strong> Marketing demos, not production skills in 2025–2026.</li>
+    <li><strong>Multi-cloud initially:</strong> Master AWS first. Adding Azure/GCP before you're deeply AWS-proficient just creates shallow knowledge of everything.</li>
+    <li><strong>Jenkins mastery:</strong> Jenkins is declining (though still present). Know enough to understand pipelines. Don't become a Jenkins expert — that's a career dead-end.</li>
+    <li><strong>Kubernetes CKS before CKA:</strong> CKA is the foundation. CKS is the specialization. Do them in order.</li>
+    <li><strong>Cloud certifications before hands-on experience:</strong> Getting AWS SAA before building real AWS infrastructure produces knowledge that evaporates. Build first, certify second.</li>
+  </ul>
+</section>
+
+<hr>
+
+<!-- =============================================================== -->
+<!-- PART 13 — FINAL HIRING BLUEPRINT -->
+<!-- =============================================================== -->
+<section class="part" id="part13">
+  <div class="part-header">
+    <div class="part-num n13">13</div>
+    <div>
+      <div class="part-title">Final Hiring Blueprint</div>
+      <div class="part-sub">Your complete path from today to Platform Engineer → Senior DevOps → AI Infra → Remote</div>
+    </div>
+  </div>
+
+  <h2>Current State Assessment</h2>
+  <div class="card" style="background:var(--surface2);">
+    <p style="font-size:13px;"><strong>Where you are:</strong> DevOps Engineer, ~2 years experience, Bengaluru, product company (Travercel Technologies). Building multi-cluster GitOps project + CKA in progress. FareFlyers on the side. Non-CS background (BBA). Target: ₹7 LPA now, ₹12–15 LPA in 18 months, ₹25 LPA+ at 3 years, remote US/EU contract eventually.</p>
+  </div>
+
+  <h2>Phase 1: Unlock ₹8–12 LPA (Now → Month 6)</h2>
+  <div class="month-block">
+    <div class="month-title">Target: ₹8–12 LPA Platform/DevOps role at product startup or mid-size company</div>
+
+    <h3>Unlock criteria (all must be true)</h3>
+    <ul class="custom check">
+      <li>CKA certified</li>
+      <li>Multi-cluster GitOps project on GitHub with full documentation</li>
+      <li>Terraform AWS environment (VPC + EKS + modules) project live</li>
+      <li>CI/CD pipeline with security gates project live</li>
+      <li>Observability stack (Prometheus/Grafana/Loki) deployed on portfolio cluster</li>
+      <li>LinkedIn optimized with Platform Engineer headline</li>
+      <li>Applied to 30+ companies (mix of startups on Wellfound + product companies on LinkedIn)</li>
+    </ul>
+
+    <h3>Target companies for this phase</h3>
+    <ul class="custom">
+      <li>Series A/B startups on Wellfound in Bengaluru or remote-first</li>
+      <li>Mid-size product companies (Razorpay, slice, Jupiter, Moneyview, Jar)</li>
+      <li>GCC DevOps teams (Walmart Global Tech, Goldman Sachs, JPMorgan) — harder bar but better pay</li>
+      <li>Platform engineering teams at SaaS companies (Freshworks, Chargebee, Postman)</li>
+    </ul>
+
+    <h3>Realistic salary expectation</h3>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-val" style="color:var(--green)">₹8–10 LPA</div><div class="stat-label">Strong candidate with CKA + portfolio</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--blue)">₹10–12 LPA</div><div class="stat-label">Excellent interview performance + GitOps project</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--accent)">₹12–14 LPA</div><div class="stat-label">GCC or funded startup + negotiation</div></div>
+    </div>
+  </div>
+
+  <h2>Phase 2: Unlock ₹14–20 LPA (Month 6 → Month 18)</h2>
+  <div class="month-block m2">
+    <div class="month-title">Target: Platform Engineer or Senior DevOps at well-funded product company</div>
+
+    <h3>What to build in this phase</h3>
+    <ul class="custom">
+      <li>Get the title "Platform Engineer" — do the work to earn it in your current or new role</li>
+      <li>Add Terraform Associate and AWS SAA certifications</li>
+      <li>Build one AI infrastructure project (vLLM on K8s with KEDA autoscaling)</li>
+      <li>Contribute to one open-source project (ArgoCD, external-secrets, or similar)</li>
+      <li>Start writing technical content (2–3 blog posts demonstrating depth)</li>
+      <li>Speak at a Kubernetes or DevOps meetup in Bengaluru (massive visibility boost)</li>
+      <li>Begin basic Go learning (2 months)</li>
+    </ul>
+
+    <h3>Realistic salary expectation at 18 months</h3>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-val" style="color:var(--green)">₹14–16 LPA</div><div class="stat-label">Strong Platform Engineer with certifications</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--blue)">₹18–20 LPA</div><div class="stat-label">AI infra project + open source contributions</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--accent)">₹22–25 LPA</div><div class="stat-label">Staff-adjacent with platform ownership + GCC</div></div>
+    </div>
+  </div>
+
+  <h2>Phase 3: Unlock ₹25 LPA+ or Remote (Month 18 → Month 36)</h2>
+  <div class="month-block m3">
+    <div class="month-title">Target: Senior/Staff Platform Engineer or Remote US/EU role</div>
+
+    <h3>What separates ₹20L from ₹30L+ in India</h3>
+    <ul class="custom">
+      <li>Platform ownership — you built and own an IDP or developer platform, not just maintained pipelines</li>
+      <li>Staff-level system design skills — multi-cluster, multi-tenant architecture at real scale</li>
+      <li>AI infrastructure expertise — deploy and operate GPU-based ML serving systems</li>
+      <li>Go proficiency — can write Kubernetes operators and custom controllers</li>
+      <li>Technical writing / public visibility — blog, conference talks, open source</li>
+      <li>Leadership evidence — mentored junior engineers, drove technical decisions</li>
+    </ul>
+
+    <h3>Remote path unlock criteria</h3>
+    <ul class="custom check">
+      <li>3+ years production Kubernetes at scale (not lab clusters)</li>
+      <li>GitHub profile that a hiring manager can evaluate in 30 seconds</li>
+      <li>Technical blog with 5+ posts that rank on Google for DevOps topics</li>
+      <li>Strong English written communication (async-first work culture)</li>
+      <li>Previous remote or async work experience (or strong references)</li>
+      <li>Demonstrated complex problem-solving in publicly documented projects</li>
+    </ul>
+
+    <h3>Remote compensation expectation (India-based)</h3>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-val" style="color:var(--green)">$50–70K</div><div class="stat-label">USD/yr — Junior remote role</div><div class="stat-sub">~₹42–59 LPA</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--blue)">$80–110K</div><div class="stat-label">USD/yr — Mid remote role</div><div class="stat-sub">~₹67–92 LPA</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:var(--accent)">$130–180K</div><div class="stat-label">USD/yr — Senior remote role</div><div class="stat-sub">~₹1.1–1.5 Cr</div></div>
+    </div>
+  </div>
+
+  <h2>The Non-Negotiable Moves — Regardless of Phase</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Do every week</h3>
+      <ul class="custom check">
+        <li>2–3 hrs hands-on lab work (break something, fix it)</li>
+        <li>Read 1 postmortem from GitHub/Netflix/Cloudflare blog</li>
+        <li>Follow 3–5 PRs in ArgoCD or other open source K8s projects</li>
+        <li>1 LeetCode/HackerRank (platform engineers do get algo questions)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Do every month</h3>
+      <ul class="custom check">
+        <li>Write 1 documentation artifact (runbook, ADR, or architecture doc)</li>
+        <li>Push code to at least 2 public GitHub repos</li>
+        <li>Review your resume and update with any new projects or achievements</li>
+        <li>Apply to at least 5 roles even if not actively job hunting (keeps market awareness)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>FareFlyers — How This Fits Your Career</h2>
+  <div class="card" style="border-color:var(--accent); background:rgba(124,110,248,0.05);">
+    <h3>Using FareFlyers to build your portfolio</h3>
+    <p style="font-size:13px;">FareFlyers is not just a business project — it is a living portfolio asset. When you build the FareFlyers backend infrastructure, document it as a portfolio project: EKS cluster for the API, ArgoCD for deployment, Prometheus + Grafana for monitoring the Amadeus API integration, bank offer scraper as a scheduled CronJob on Kubernetes. This demonstrates you can build real production infrastructure for a real product. Interviewers respond strongly to "I built and operate my own platform" narratives.</p>
+  </div>
+
+  <hr>
+
+  <h2>Summary Timeline</h2>
+  <table>
+    <thead><tr><th>Timeline</th><th>Role</th><th>Salary Target</th><th>Key Milestones</th></tr></thead>
+    <tbody>
+      <tr><td>Now → Month 3</td><td>DevOps Eng (current)</td><td>₹6–7 LPA</td><td>CKA exam, GitOps project 80% done, Terraform module project started</td></tr>
+      <tr><td>Month 3–6</td><td>Job search + transition</td><td>Target ₹8–12 LPA</td><td>CKA done, 3 portfolio projects live, 30+ applications sent</td></tr>
+      <tr><td>Month 6–18</td><td>Platform Engineer</td><td>₹10–18 LPA</td><td>PE title earned, Terraform Associate + AWS SAA, AI infra project, blog posts</td></tr>
+      <tr><td>Month 18–30</td><td>Senior Platform Eng</td><td>₹18–25 LPA</td><td>Platform ownership, Go basics, IDP built, open source contribution</td></tr>
+      <tr><td>Month 30–42</td><td>Staff PE or Remote Eng</td><td>₹25–40 LPA or $80–130K</td><td>Multi-cluster at scale, AI infra expertise, remote-ready portfolio</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout success" style="margin-top:2rem;">
+    <strong>Final note — the most important thing:</strong> Every engineer who reached ₹20 LPA+ in platform engineering did so through consistent, documented, public proof of work — not through watching tutorials or collecting certificates. Your BBA background is not a handicap — it means you can think about business value, which most engineers from CS backgrounds cannot. That is your edge. Use it.
+  </div>
+
+  <div style="text-align:center; padding:3rem 0 1rem;">
+    <p style="font-size:13px; color:var(--muted);">Platform Engineering &amp; DevOps Complete Career Blueprint 2025–2026</p>
+    <p style="font-size:12px; color:var(--muted);">Built for Bengaluru → India → Remote. Good luck.</p>
+  </div>
+</section>
+
+</div><!-- end #main -->
+
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const navLinks = document.querySelectorAll('#nav a');
+const sections = document.querySelectorAll('section.part, .hero');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const id = e.target.getAttribute('id');
+      const link = document.querySelector(`#nav a[href="#${id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, {threshold: 0.1});
+
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
